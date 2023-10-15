@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
 public class Panel : Component
 {
     public new class UxmlFactory : UxmlFactory<Panel, UxmlTraits> { }

@@ -1,35 +1,39 @@
 using UnityEngine;
 
-public enum ThemeEnum
+namespace Sky9th.UUI
 {
-    DEFAULT
-}
+    public enum ThemeEnum
+    {
+        DEFAULT
+    }
 
-public enum TypeEnum
-{
-    Default,
-    Primary,
-    Info,
-    Warn,
-    Disabled
-}
-public enum ValidationEnum
-{
-    MatchRegexp,
-    IsEmail,
-    IsEmpty,
-    Required,
-    Trim,
-    IsNumber,
-    IsFloat,
-    IsPositive,
-    MinNumber,
-    MaxNumber,
-    MinFloat,
-    MaxFloat,
-    IsString,
-    MinStringLength,
-    MaxStringLength,
-    MaxFileSize,
-    AllowedExtensions
+    public enum TypeEnum
+    {
+        Default,
+        Primary,
+        Info,
+        Warn,
+        Disabled
+    }
+    public enum ValidationEnum
+    {
+        MatchRegexp,
+        IsEmail,
+        IsEmpty,
+        Required,
+        Trim,
+        IsNumber,
+        IsFloat,
+        IsPositive,
+        MinNumber,
+        MaxNumber,
+        MinFloat,
+        MaxFloat,
+        IsString,
+        MinStringLength,
+        MaxStringLength,
+        MaxFileSize,
+        AllowedExtensions
+    }
+
 }

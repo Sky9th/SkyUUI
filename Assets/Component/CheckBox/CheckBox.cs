@@ -1,4 +1,4 @@
-using Sky9th.UIT;
+using Sky9th.UUI;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -44,7 +44,7 @@ public class CheckBox : ValidatorComponent<string>
     private HashSet<string> checkedList = new();
     public CheckBox()
     {
-        itemUxml = Resources.Load<VisualTreeAsset>("Uxml/CheckBoxItem");
+        itemUxml = SkyUUIProperties.LoadUxml("CheckBoxItem");
         item = itemUxml.Instantiate();
 
         checkBox = this;

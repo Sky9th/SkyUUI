@@ -50,8 +50,8 @@ public class TextInputField : TextInputValidatorComponent
     {
         VisualElement container = this.Children().First();
 
-        StyleSheet styleSheet = Resources.Load<StyleSheet>("Uss/TextInputField");
-        styleSheets.Add(styleSheet);
+        /*StyleSheet styleSheet = Resources.Load<StyleSheet>("Uss/TextInputField");
+        styleSheets.Add(styleSheet);*/
 
         placeholderLabel = new Label();
         placeholderLabel.AddToClassList("placeholder");

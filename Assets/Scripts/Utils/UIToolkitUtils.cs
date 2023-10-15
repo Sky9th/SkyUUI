@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Sky9th.UIT
+namespace Sky9th.UUI
 {
     public class UIToolkitUtils
     {
