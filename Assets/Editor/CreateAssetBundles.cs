@@ -3,16 +3,17 @@ using System.IO;
 
 public class CreateAssetBundles
 {
-    [MenuItem("Assets/Build AssetBundles")]
-    static void BuildAllAssetBundles()
+
+    [MenuItem("Assets/Build AssetBundle for Windows")]
+    static void BuildAssetBundleForWindows()
     {
-        string assetBundleDirectory = "Assets/AssetBundles";
-        if (!Directory.Exists(assetBundleDirectory))
-        {
-            Directory.CreateDirectory(assetBundleDirectory);
-        }
-        BuildPipeline.BuildAssetBundles(assetBundleDirectory,
-                                        BuildAssetBundleOptions.None,
-                                        BuildTarget.StandaloneWindows);
+        BuildPipeline.BuildAssetBundles("Assets/AssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
     }
+
+    [MenuItem("Assets/Build AssetBundle for WebGL")]
+    static void BuildAssetBundleForWebGL()
+    {
+        BuildPipeline.BuildAssetBundles("Assets/AssetBundles", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+    }
+
 }

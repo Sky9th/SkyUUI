@@ -14,14 +14,12 @@ namespace Skyt9h.UUI
         private Texture2D cursor;
         private Texture2D move;
 
-
         // Start is called before the first frame update
         void Start()
         {
-            SkyUUIProperties.InitUxmlBundle();
-
             doc = GetComponent<UIDocument>();
             root = doc.rootVisualElement;
+
         }
 
         // Update is called once per frame

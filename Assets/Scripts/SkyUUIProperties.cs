@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -23,6 +24,7 @@ namespace Sky9th.UUI
                     Debug.Log("Failed to load AssetBundle!");
                 }
                 UxmlBundle = myLoadedAssetBundle;
+                Debug.Log(UxmlBundle);
             }
 #endif
 
@@ -30,22 +32,18 @@ namespace Sky9th.UUI
 
         public static VisualTreeAsset LoadUxml(string path)
         {
-
-#if UNITY_EDITOR
             string uxmlPath = "assets/uxml/" + path.ToLower() + ".uxml";
+#if UNITY_EDITOR
             VisualTreeAsset uxml = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
             return uxml;
 #else
-
             if (UxmlBundle == null)
             {
-                AssetBundle myLoadedAssetBundle = AssetBundle.LoadFromFile("Assets/AssetBundles/skyuui_uxml");
-                if (myLoadedAssetBundle == null)
-                {
-                    Debug.Log("Failed to load AssetBundle!");
-                }
-                UxmlBundle = myLoadedAssetBundle;
+                SkyUUIProperties.InitUxmlBundle();
             }
+            Debug.Log(UxmlBundle);
+            VisualTreeAsset uxml = UxmlBundle.LoadAsset<VisualTreeAsset>(uxmlPath);
+            return uxml;
 #endif
         }
 
