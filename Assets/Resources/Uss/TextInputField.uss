@@ -1,0 +1,65 @@
+TextInputField {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    flex-direction: coolumn;
+}
+
+TextInputField.readonly > #unity-text-input > TextElement {
+    color: var(--placeholder-color);
+}
+
+TextInputField > #unity-text-input {
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    border-color: var(--default-color);
+}
+
+TextInputField > #unity-text-input > .icon {
+    width: 30px;
+    height: 30px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+TextInputField > #unity-text-input > .placeholder {
+    font-size: 14px;
+    left: 15px;
+    margin: 0;
+    padding: 0;
+    color: var(--placeholder-color);
+}
+
+TextInputField > #unity-text-input > TextElement {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    color: var(--txt-color);
+    height: 100%;
+    height: 43px;
+}
+
+TextInputField.primary > #unity-text-input {
+    border-color: var(--primary-color);
+}
+
+TextInputField.info > #unity-text-input {
+    border-color: var(--info-color);
+}
+
+TextInputField.warn > #unity-text-input {
+    border-color: var(--warn-color);
+}
+
+TextInputField.disabled > #unity-text-input {
+    border-color: var(--disabled-color);
+}
+
+TextInputField.danger > #unity-text-input {
+    border-color: var(--danger-color);
+}

@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
+    <Style src="project://database/Assets/UI%20Toolkit/Component/Select/Select.uss?fileID=7433441132597879392&amp;guid=6d8841d9acbd6da4d968502e550783e9&amp;type=3#Select" />
+        <ui:VisualElement name="Container">
+            <ui:VisualElement name="Input">
+                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Placeholder" />
+                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextLabel" />
+                <ui:VisualElement name="Icon">
+                    <ui:VisualElement name="IconImg" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+</ui:UXML>

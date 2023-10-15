@@ -1,0 +1,108 @@
+#SwtichContainer {
+    flex-direction: row;
+    align-items: center;
+}
+
+#Switch {
+    width: 50px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+#Switch > #Bar {
+    width: 34px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--default-color);
+    opacity: 0.75;
+    position: relative;
+    transition: 0.3s all;
+}
+
+#Switch > #Point {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: var(--default-color);
+    position: absolute;
+    left: 3px;
+    transition: 0.3s all;
+}
+
+#Switch > #PointHover {
+    height: 30px;
+    width: 50px;
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    top: 4.5px;
+    background-color: var(--default-color);
+    opacity: 0;
+    transition: 0.3s all;
+    display: none;
+}
+
+#Switch:hover > #PointHover {
+    opacity: 0.2;
+    display: flex;
+}
+
+#SwtichContainer > #Label {
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#Switch.checked > #Point {
+    left: 25px;
+}
+
+#Switch.checked > #Bar {
+    background-color: var(--switch-primary-color);
+}
+
+#Switch.checked > #Point {
+    background-color: var(--switch-primary-color);
+}
+
+#Switch.checked:hover > #PointHover {
+    background-color: var(--switch-primary-color);
+}
+
+#Switch.primary.checked > #Bar {
+    background-color: var(--switch-primary-color);
+}
+
+#Switch.primary.checked > #Point {
+    background-color: var(--switch-primary-color);
+}
+
+#Switch.info.checked > #Bar {
+    background-color: var(--switch-info-color);
+}
+
+#Switch.info.checked > #Point {
+    background-color: var(--switch-info-color);
+}
+
+#Switch.warn.checked > #Bar {
+    background-color: var(--switch-warn-color);
+}
+
+#Switch.warn.checked > #Point {
+    background-color: var(--switch-warn-color);
+}
+
+#Switch.disabled.checked > #Bar {
+    background-color: var(--switch-disabled-color);
+}
+
+#Switch.disabled.checked > #Point {
+    background-color: var(--switch-disabled-color);
+}

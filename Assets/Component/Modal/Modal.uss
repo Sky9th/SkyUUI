@@ -1,0 +1,115 @@
+Modal {
+    width: 100%;
+    height: 100%;
+    background-color: var(--panel-bg-color);
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: var(--panel-bd-color);
+    margin: 0;
+    padding: 5px;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#ModalHeader {
+    width: 100%;
+    justify-content: center;
+    align-self: auto;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 5px;
+    background-color: var(--panel-content-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#ModalHeader > #ModalTitle {
+    font-size: 24px;
+    margin: 0;
+    margin-left: 12px;
+    color: var(--label-normal-color);
+}
+
+#ModalHeader > #ModalLogo {
+    position: relative;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: var(--panel-bd-color);
+    border-width: 1px;
+    padding: 5px;
+    margin: 0;
+}
+
+#ModalHeader > #ModalLogo > #ModalLogoImg {
+    background-image: url('project://database/Assets/Resources/Images/logo_s.png?fileID=2800000&guid=5728543f4d7c60e48af2f1594ea69f45&type=3#logo_s');
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+#ModalHeader > #ModalClose {
+    margin-right: 0;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    transition-property: all;
+    transition-duration: 0.3s;
+    border-width: 1px;
+}
+
+#ModalHeader > #ModalClose:hover {
+    background-color: rgb(229, 229, 229);
+    border-left-color: rgba(85, 85, 85, 0);
+    border-right-color: rgba(85, 85, 85, 0);
+    border-top-color: rgba(85, 85, 85, 0);
+    border-bottom-color: rgba(85, 85, 85, 0);
+}
+
+#ModalHeader > #ModalClose > #ModalCloseImg {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    width: 100%;
+    height: 100%;
+    background-image: resource('Images/close');
+}
+
+#InsertNode {
+    flex-shrink: 3;
+    flex-grow: 1;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 100%;
+    background-color: var(--panel-content-color);
+}
+
+#ModalBottom {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-right: 0;
+    background-color: var(--panel-content-color);
+}

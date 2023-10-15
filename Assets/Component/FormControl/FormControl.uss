@@ -1,0 +1,58 @@
+#FormControl {
+    width: 100%;
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+    min-height: auto;
+    margin-bottom: 20px;
+}
+
+#FormControl > #Input {
+    width: 100%;
+    flex-direction: row;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    min-height: auto;
+    padding-right: 0;
+    padding-left: 0;
+    height: 100%;
+}
+
+#FormControl > #Input > #Label {
+    font-size: 14px;
+    width: 80px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    color: var(--default-color);
+    justify-content: center;
+    -unity-text-align: upper-right;
+    padding-right: 12px;
+}
+
+#FormControl > #Input > #Label > #LabelText {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#FormControl > #Input > #Control {
+    width: 380px;
+    height: auto;
+    min-height: 45px;
+}
+
+#FormControl > #Error {
+    padding-left: 80px;
+    width: 460px;
+}
+
+#FormControl > #Error > #ErrorText {
+    margin: 0;
+    padding: 0;
+    color: var(--danger-color);
+    font-size: 15px;
+    padding-left: 35%;
+}

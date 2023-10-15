@@ -1,0 +1,137 @@
+Slider {
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 40px;
+}
+
+Slider > #BarContainer {
+    height: 26px;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+Slider > #BarContainer > #Bar {
+    height: 100%;
+    border-radius: 3px;
+    width: 100%;
+    overflow: hidden;
+}
+
+Slider > #BarContainer > #Bar > #UnChecked {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--sliderBar-default-color);
+    width: 100%;
+    height: 100%;
+}
+
+Slider > #BarContainer > #Bar > #Checked {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--slider-default-color);
+    width: 0;
+    height: 100%;
+}
+
+Slider > #BarContainer > #Point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--slider-default-color);
+    position: absolute;
+    top: 3px;
+    left: 0;
+    margin-left: 0;
+}
+
+Slider > #BarContainer > #Point > #Tips {
+    position: absolute;
+    left: -15px;
+    top: -100%;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    -unity-text-align: upper-center;
+    color: var(--slider-default-color);
+}
+
+
+Slider.primary > #BarContainer > #Bar > #UnChecked {
+    background-color: var(--sliderBar-primary-color);
+}
+Slider.primary > #BarContainer > #Bar > #Checked {
+    background-color: var(--slider-primary-color);
+}
+Slider.primary > #BarContainer > #Point {
+    background-color: var(--slider-primary-color);
+}
+Slider.primary > #BarContainer > #Point > #Tips {
+    color: var(--slider-primary-color);
+}
+
+
+Slider.info > #BarContainer > #Bar > #UnChecked {
+    background-color: var(--sliderBar-info-color);
+}
+Slider.info > #BarContainer > #Bar > #Checked {
+    background-color: var(--slider-info-color);
+}
+Slider.info > #BarContainer > #Point {
+    background-color: var(--slider-info-color);
+}
+Slider.info > #BarContainer > #Point > #Tips {
+    color: var(--slider-info-color);
+}
+
+
+Slider.warn > #BarContainer > #Bar > #UnChecked {
+    background-color: var(--sliderBar-warn-color);
+}
+Slider.warn > #BarContainer > #Bar > #Checked {
+    background-color: var(--slider-warn-color);
+}
+Slider.warn > #BarContainer > #Point {
+    background-color: var(--slider-warn-color);
+}
+Slider.warn > #BarContainer > #Point > #Tips {
+    color: var(--slider-warn-color);
+}
+
+
+Slider.disabled > #BarContainer > #Bar > #UnChecked {
+    background-color: var(--sliderBar-disabled-color);
+}
+Slider.disabled > #BarContainer > #Bar > #Checked {
+    background-color: var(--slider-disabled-color);
+}
+Slider.disabled > #BarContainer > #Point {
+    background-color: var(--slider-disabled-color);
+}
+Slider.disabled > #BarContainer > #Point > #Tips {
+    color: var(--slider-disabled-color);
+}
+
+
+Slider.danger > #BarContainer > #Bar > #UnChecked {
+    background-color: var(--sliderBar-danger-color);
+}
+Slider.danger > #BarContainer > #Bar > #Checked {
+    background-color: var(--slider-danger-color);
+}
+Slider.danger > #BarContainer > #Point {
+    background-color: var(--slider-danger-color);
+}
+Slider.danger > #BarContainer > #Point > #Tips {
+    color: var(--slider-danger-color);
+}

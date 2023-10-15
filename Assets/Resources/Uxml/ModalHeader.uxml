@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/component/Modal/ModalHeader/ModalHeader.uss?fileID=7433441132597879392&amp;guid=682636c0fae04f34babdc099d93d1e24&amp;type=3#ModalHeader" />
+    <ui:GroupBox name="ModalHeader">
+        <ui:GroupBox name="ModalLogo">
+            <ui:VisualElement name="ModalLogoImg" style="flex-grow: 1;" />
+        </ui:GroupBox>
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ModalTitle" />
+        <ui:GroupBox name="ModalClose">
+            <ui:VisualElement name="ModalCloseImg" style="flex-grow: 1;" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+</ui:UXML>

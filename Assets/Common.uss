@@ -1,0 +1,156 @@
+:root {
+    --txt-color: rgb(42, 56, 79);
+    --placeholder-color: rgb(153, 153, 153);
+
+    --default-color: rgb(42, 56, 79);
+    --default-dark-color: rgb(34, 46, 64);
+    --default-light-color: rgb(71, 95, 133);
+
+    --primary-color: rgb(37, 211, 143);
+    --primary-dark-color: rgb(22, 129, 89);
+    --primary-light-color: rgb(103, 228, 179);
+
+    --disabled-color: rgb(213, 213, 213);
+    --disabled-dark-color: rgb(125, 125, 125);
+    --disabled-light-color: rgb(231, 231, 231);
+
+    --info-color: rgb(105, 167, 196);
+    --info-dark-color: rgb(48, 97, 120);
+    --info-light-color: rgb(165, 202, 220);
+
+    --warn-color: rgb(238, 168, 53);
+    --warn-dark-color: rgb(153, 101, 13);
+    --warn-light-color: rgb(244, 201, 128);
+
+    --danger-color: rgb(245, 108, 108);
+    --danger-dark-color: rgb(197, 14, 14);
+    --danger-light-color: rgb(249, 155, 155);
+
+    --panel-bg-color: rgba(247, 244, 248, 0.91);
+    --panel-content-color: rgb(243, 240, 241);
+    --panel-bd-color: var(--default-color);
+
+    --label-normal-color: rgb(42, 56, 79);
+    --btn-txt-solid-color: rgb(255, 255, 255);
+
+    --btn-default-color: var(--default-color);
+    --btn-primary-color: var(--primary-color);
+    --btn-disabled-color: var(--disabled-color);
+    --btn-info-color: var(--info-color);
+    --btn-warn-color: var(--warn-color);
+    --btn-txt-solid-color: rgb(255, 255, 255);
+
+    --switch-default-color: var(--default-color);
+    --switch-primary-color: var(--primary-color);
+    --switch-disabled-color: var(--disabled-color);
+    --switch-info-color: var(--info-color);
+    --switch-warn-color: var(--warn-color);
+
+    --slider-default-color: var(--default-color);
+    --sliderBar-default-color: var(--default-dark-color);
+    --slider-primary-color: var(--primary-color);
+    --sliderBar-primary-color: var(--primary-dark-color);
+    --slider-disabled-color: var(--disabled-color);
+    --sliderBar-disabled-color: var(--disabled-dark-color);
+    --slider-info-color: var(--info-color);
+    --sliderBar-info-color: var(--info-dark-color);
+    --slider-warn-color: var(--warn-color);
+    --sliderBar-warn-color: var(--warn-dark-color);
+    --slider-danger-color: var(--danger-color);
+    --sliderBar-danger-color: var(--danger-dark-color);
+}
+
+#container {
+    -unity-font: url('project://database/Assets/Fonts/pmzd.ttf?fileID=12800000&guid=547b5a9e0fc0f404a9609ad46e4c5e5c&type=3#pmzd');
+    align-items: center;
+    justify-content: center;
+    align-self: auto;
+}
+
+Button {
+    background-color: rgb(243, 240, 243);
+    color: var(--btn-default-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    border-left-color: var(--btn-default-color);
+    border-right-color: var(--btn-default-color);
+    border-top-color: var(--btn-default-color);
+    border-bottom-color: var(--btn-default-color);
+    margin-bottom: 0;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+}
+
+Button.primary {
+    border-left-color: var(--btn-primary-color);
+    border-right-color: var(--btn-primary-color);
+    border-top-color: var(--btn-primary-color);
+    border-bottom-color: var(--btn-primary-color);
+    color: var(--btn-primary-color);
+}
+
+Button.disabled {
+    border-left-color: var(--btn-disabled-color);
+    border-right-color: var(--btn-disabled-color);
+    border-top-color: var(--btn-disabled-color);
+    border-bottom-color: var(--btn-disabled-color);
+    color: var(--btn-disabled-color);
+}
+
+Button.info {
+    border-left-color: var(--btn-info-color);
+    border-right-color: var(--btn-info-color);
+    border-top-color: var(--btn-info-color);
+    border-bottom-color: var(--btn-info-color);
+    color: var(--btn-info-color);
+}
+
+Button.warn {
+    border-left-color: var(--btn-warn-color);
+    border-right-color: var(--btn-warn-color);
+    border-top-color: var(--btn-warn-color);
+    border-bottom-color: var(--btn-warn-color);
+    color: var(--btn-warn-color);
+}
+
+Button.solid {
+    background-color: var(--btn-default-color);
+    color: var(--btn-txt-solid-color);
+}
+
+Button.solid.primary {
+    background-color: var(--btn-primary-color);
+}
+
+Button.solid.disabled {
+    background-color: var(--btn-disabled-color);
+}
+
+Button.solid.info {
+    background-color: var(--btn-info-color);
+}
+
+Button.solid.warn {
+    background-color: var(--btn-warn-color);
+}
+
+.errorMsgList {
+    width: 100%;
+    color: var(--danger-color);
+    font-size: 14px;
+    flex-direction: row;
+}
+
+StringFormControl {
+    margin-bottom: 0;
+}

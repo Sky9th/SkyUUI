@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
+    <Style src="project://database/Assets/UI%20Toolkit/Component/Slider/Slider.uss?fileID=7433441132597879392&amp;guid=0c469514ecc6db943b1ba7deed528b1c&amp;type=3#Slider" />
+        <ui:VisualElement name="BarContainer">
+            <ui:VisualElement name="Bar">
+                <ui:VisualElement name="UnChecked" />
+                <ui:VisualElement name="Checked" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Point">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Tips" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+</ui:UXML>

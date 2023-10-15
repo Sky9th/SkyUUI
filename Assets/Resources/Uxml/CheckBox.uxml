@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="CheckBoxItem" src="project://database/Assets/UI%20Toolkit/Component/CheckBox/CheckBoxItem.uxml?fileID=9197481963319205126&amp;guid=0858a9611f4c2f647ab57590674335ce&amp;type=3#CheckBoxItem" />
+    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
+    <Style src="project://database/Assets/UI%20Toolkit/Component/CheckBox/CheckBox.uss?fileID=7433441132597879392&amp;guid=3db76c37bd874a84592d4d552dd8a042&amp;type=3#CheckBox" />
+    <ui:Instance template="CheckBoxItem" name="CheckBoxItem" />
+</ui:UXML>

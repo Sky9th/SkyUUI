@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
+    <Panel Width="500" Height="700" width="500" height="650">
+        <Form>
+            <StringFormControl>
+                <TextInputField Validator="Required" />
+            </StringFormControl>
+            <StringFormControl>
+                <Select Validator="Required" Choice="A,B,C" />
+            </StringFormControl>
+            <StringFormControl>
+                <CheckBox Validator="Required" Choice="A,B,C,D" />
+            </StringFormControl>
+            <StringFormControl>
+                <Radio Choice="A,B,C" Validator="Required" />
+            </StringFormControl>
+            <IntFormControl>
+                <Slider Validator="MinNumber:30" />
+            </IntFormControl>
+            <StringFormControl>
+                <TextInputField />
+            </StringFormControl>
+            <BoolFormControl>
+                <Switch />
+            </BoolFormControl>
+        </Form>
+    </Panel>
+</ui:UXML>

@@ -1,0 +1,14 @@
+Form {
+    width: auto;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+Form > #FormFooter {
+    flex-direction: row-reverse;
+}
+
+Form > #FormFooter > Button {
+    margin-right: 0;
+    margin-left: 15px;
+}

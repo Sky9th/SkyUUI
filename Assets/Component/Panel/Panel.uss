@@ -1,0 +1,25 @@
+Panel {
+    width: 100%;
+    height: 100%;
+    background-color: var(--panel-bg-color);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left-color: var(--panel-bd-color);
+    border-right-color: var(--panel-bd-color);
+    border-top-color: var(--panel-bd-color);
+    border-bottom-color: var(--panel-bd-color);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 15px;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
