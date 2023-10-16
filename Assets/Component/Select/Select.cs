@@ -71,7 +71,7 @@ public class Select : ValidatorComponent<string>
         iconImg = UIToolkitUtils.FindChildElement(this, "IconImg");
 
 
-        menuUxml = SkyUUIProperties.LoadUxml("SelectMenu");
+        menuUxml = SkyUUIBundle.LoadUxml("SelectMenu");
         menu = menuUxml.Instantiate();
 
         menu.name = "SelectMenu";

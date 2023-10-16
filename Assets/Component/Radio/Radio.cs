@@ -42,7 +42,7 @@ public class Radio : ValidatorComponent<string>
     private string[] choiceList;
     public Radio()
     {
-        itemUxml = SkyUUIProperties.LoadUxml("RadioItem");
+        itemUxml = SkyUUIBundle.LoadUxml("RadioItem");
         item = itemUxml.Instantiate();
 
         radio = this;

@@ -44,7 +44,7 @@ public class CheckBox : ValidatorComponent<string>
     private HashSet<string> checkedList = new();
     public CheckBox()
     {
-        itemUxml = SkyUUIProperties.LoadUxml("CheckBoxItem");
+        itemUxml = SkyUUIBundle.LoadUxml("CheckBoxItem");
         item = itemUxml.Instantiate();
 
         checkBox = this;

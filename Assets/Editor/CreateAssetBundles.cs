@@ -7,13 +7,23 @@ public class CreateAssetBundles
     [MenuItem("Assets/Build AssetBundle for Windows")]
     static void BuildAssetBundleForWindows()
     {
-        BuildPipeline.BuildAssetBundles("Assets/AssetBundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+        string assetBundleDirectory = "Assets/StreamingAssets/StandaloneWindows";
+        if (!Directory.Exists(assetBundleDirectory))
+        {
+            Directory.CreateDirectory(assetBundleDirectory);
+        }
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
     }
 
     [MenuItem("Assets/Build AssetBundle for WebGL")]
     static void BuildAssetBundleForWebGL()
     {
-        BuildPipeline.BuildAssetBundles("Assets/AssetBundles", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+        string assetBundleDirectory = "Assets/StreamingAssets/WebGL";
+        if (!Directory.Exists(assetBundleDirectory))
+        {
+            Directory.CreateDirectory(assetBundleDirectory);
+        }
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, BuildTarget.WebGL);
     }
 
 }

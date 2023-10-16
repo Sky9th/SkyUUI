@@ -42,12 +42,12 @@ public class Component : VisualElement
         if (!uxml && className.IndexOf("FormControl") >= 0)
         {
             //uxml = Resources.Load<VisualTreeAsset>(componentPath + "FormControl");
-            uxml = SkyUUIProperties.LoadUxml("FormControl") as VisualTreeAsset;
+            uxml = SkyUUIBundle.LoadUxml("FormControl") as VisualTreeAsset;
         }
         else
         {
             //uxml = Resources.Load<VisualTreeAsset>(componentPath + className);
-            uxml = SkyUUIProperties.LoadUxml(className) as VisualTreeAsset;
+            uxml = SkyUUIBundle.LoadUxml(className) as VisualTreeAsset;
         }
 
         if (uxml)

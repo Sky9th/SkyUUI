@@ -1,4 +1,7 @@
+using Sky9th.UUI;
+using System.IO;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 using MethodInfo = System.Reflection.MethodInfo;
@@ -50,8 +53,13 @@ public class TextInputField : TextInputValidatorComponent
     {
         VisualElement container = this.Children().First();
 
-        /*StyleSheet styleSheet = Resources.Load<StyleSheet>("Uss/TextInputField");
-        styleSheets.Add(styleSheet);*/
+        string path = "assets/uss/TextInputField.uss";
+#if UNITY_EDITOR
+        StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
+#else
+        StyleSheet styleSheet = SkyUUIProperties.UxmlBundle.LoadAsset<StyleSheet>(path);
+#endif
+        styleSheets.Add(styleSheet);
 
         placeholderLabel = new Label();
         placeholderLabel.AddToClassList("placeholder");
