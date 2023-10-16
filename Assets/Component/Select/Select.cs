@@ -1,4 +1,4 @@
-using Sky9th.UIT;
+using Sky9th.UUI;
 using System;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
@@ -70,8 +70,10 @@ public class Select : ValidatorComponent<string>
         icon = UIToolkitUtils.FindChildElement(this, "Icon");
         iconImg = UIToolkitUtils.FindChildElement(this, "IconImg");
 
-        menuUxml = Resources.Load<VisualTreeAsset>("Uxml/SelectMenu");
+
+        menuUxml = SkyUUIBundle.LoadUxml("SelectMenu");
         menu = menuUxml.Instantiate();
+
         menu.name = "SelectMenu";
         UIToolkitUtils.ClearChildrenElements(menu);
 

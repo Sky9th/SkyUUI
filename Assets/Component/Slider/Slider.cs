@@ -1,4 +1,4 @@
-using Sky9th.UIT;
+using Sky9th.UUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,6 @@ public class Slider : ValidatorComponent <int>
         }
     }
 
-    private VisualTreeAsset uxml;
     private VisualElement point;
     private VisualElement bar;
     private VisualElement checkedBar;
@@ -88,7 +87,10 @@ public class Slider : ValidatorComponent <int>
     private void MovePoint (MouseMoveEvent evt)
     {
         Vector2 mousePos = evt.mousePosition;
-        SetPoint(mousePos);
+        if (isDragging)
+        {
+            SetPoint(mousePos);
+        }
     }
 
     private void StartMovePoint (MouseDownEvent evt)

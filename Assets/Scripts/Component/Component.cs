@@ -1,10 +1,9 @@
+using Sky9th.UUI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Component : VisualElement
 {
-
-    private readonly string componentPath = "Uxml/";
     private VisualTreeAsset uxml;
 
     public new class UxmlFactory : UxmlFactory<Component, UxmlTraits> { }
@@ -37,15 +36,18 @@ public class Component : VisualElement
     public string height { get; set; }
 
 
-    public Component () {
-
+    public Component()
+    {
         string className = GetType().ToString();
         if (!uxml && className.IndexOf("FormControl") >= 0)
         {
-            uxml = Resources.Load<VisualTreeAsset>(componentPath + "FormControl");
-        } else
+            //uxml = Resources.Load<VisualTreeAsset>(componentPath + "FormControl");
+            uxml = SkyUUIBundle.LoadUxml("FormControl") as VisualTreeAsset;
+        }
+        else
         {
-            uxml = Resources.Load<VisualTreeAsset>(componentPath + className);
+            //uxml = Resources.Load<VisualTreeAsset>(componentPath + className);
+            uxml = SkyUUIBundle.LoadUxml(className) as VisualTreeAsset;
         }
 
         if (uxml)
@@ -54,72 +56,33 @@ public class Component : VisualElement
         }
     }
 
-    internal void init ()
+    internal void init()
     {
-
         if (width != null) { SetSize(width, true, false); }
         if (height != null) { SetSize(height, false, false); }
         if (maxWidth != null) { SetSize(maxWidth, true, true); }
         if (maxHeight != null) { SetSize(maxHeight, false, true); }
     }
 
-    public void SetSize (string value, bool w, bool m)
+    public void SetSize(string value, bool isWidth, bool isMax)
     {
-        if (value.EndsWith("%"))
+        if (float.TryParse(value.TrimEnd('%'), out float number))
         {
-            // 提取数字部分
-            string numberString = value.Substring(0, value.Length - 1);
-            if (float.TryParse(numberString, out float number))
+            LengthUnit unit = value.EndsWith("%") ? LengthUnit.Percent : LengthUnit.Pixel;
+
+            if (isWidth)
             {
-                if (w)
-                {
-                    if (!m)
-                    {
-                        style.width = new Length(number, LengthUnit.Percent);
-                    } 
-                    else
-                    {
-                        style.maxWidth = new Length(number, LengthUnit.Percent);
-                    }
-                } else
-                {
-                    if (!m)
-                    {
-                        style.height = new Length(number, LengthUnit.Percent);
-                    }
-                    else
-                    {
-                        style.maxHeight = new Length(number, LengthUnit.Percent);
-                    }
-                }
-            }
-        }
-        else
-        {
-            if (float.TryParse(value, out float number))
-            {
-                if (w)
-                {
-                    if (!m)
-                    {
-                        style.width = new Length(number);
-                    }
-                    else
-                    {
-                        style.maxWidth = new Length(number);
-                    }
-                }
+                if (!isMax)
+                    style.width = new Length(number, unit);
                 else
-                {
-                    if (!m)
-                    {
-                        style.height = new Length(number);
-                    }
-                    else
-                    {
-                        style.maxHeight = new Length(number);
-                    }
-                }
+                    style.maxWidth = new Length(number, unit);
+            }
+            else
+            {
+                if (!isMax)
+                    style.height = new Length(number, unit);
+                else
+                    style.maxHeight = new Length(number, unit);
             }
         }
     }

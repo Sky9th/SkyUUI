@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f011333d0774fbc45a0ce7afe090b5b8
+guid: 1edc4b46b438b4c449c1a3b182ed929b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 2
   userData: 
-  assetBundleName: 
+  assetBundleName: skyuui_uxml
   assetBundleVariant: 
   script: {fileID: 13804, guid: 0000000000000000e000000000000000, type: 0}

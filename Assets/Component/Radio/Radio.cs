@@ -1,4 +1,4 @@
-using Sky9th.UIT;
+using Sky9th.UUI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -42,7 +42,7 @@ public class Radio : ValidatorComponent<string>
     private string[] choiceList;
     public Radio()
     {
-        itemUxml = Resources.Load<VisualTreeAsset>("Uxml/RadioItem");
+        itemUxml = SkyUUIBundle.LoadUxml("RadioItem");
         item = itemUxml.Instantiate();
 
         radio = this;
