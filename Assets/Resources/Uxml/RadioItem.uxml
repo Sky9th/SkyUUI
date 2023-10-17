@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <Style src="project://database/Assets/Resources/Uss/Radio.uss?fileID=7433441132597879392&amp;guid=495f4a14f34c1184d98fc1860f7494e7&amp;type=3#Radio" /><ui:VisualElement name="RadioItem">
+    <ui:VisualElement name="Btn">
+        <ui:VisualElement name="Round">
+            <ui:VisualElement name="Point" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+</ui:UXML>

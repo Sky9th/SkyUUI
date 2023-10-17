@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Template name="RadioItem" src="project://database/Assets/UI%20Toolkit/Component/Radio/RadioItem.uxml?fileID=9197481963319205126&amp;guid=346a3922487968648bfe851a41a33f03&amp;type=3#RadioItem" />
-    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
-    <Style src="project://database/Assets/UI%20Toolkit/Component/Radio/Radio.uss?fileID=7433441132597879392&amp;guid=665e1a62cd1fc6f48acea3c9a3fdb78a&amp;type=3#Radio" />
-    <ui:Instance template="RadioItem" name="RadioItem" />
-</ui:UXML>

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <Style src="project://database/Assets/Resources/Uss/Switch.uss?fileID=7433441132597879392&amp;guid=d648f65e0a0404d4889eaedb86a7a4e5&amp;type=3#Switch" />
+    <ui:VisualElement name="SwtichContainer">
+        <ui:VisualElement name="Switch">
+            <ui:VisualElement name="PointHover"/>
+            <ui:VisualElement name="Bar" />
+            <ui:VisualElement name="Point" />
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Sky9th.UUI
+namespace Sky9th.SkyUUI
 {
     public static class ValidatorUtils<T>
     {

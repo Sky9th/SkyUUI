@@ -1,5 +1,5 @@
 using Sky9th;
-using Sky9th.UUI;
+using Sky9th.SkyUUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

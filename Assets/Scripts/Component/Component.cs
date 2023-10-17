@@ -1,4 +1,4 @@
-using Sky9th.UUI;
+using Sky9th.SkyUUI;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -39,21 +39,21 @@ public class Component : VisualElement
     public Component()
     {
         string className = GetType().ToString();
-        if (!uxml && className.IndexOf("FormControl") >= 0)
+        if (className != "Component")
         {
-            //uxml = Resources.Load<VisualTreeAsset>(componentPath + "FormControl");
-            uxml = SkyUUIBundle.LoadUxml("FormControl") as VisualTreeAsset;
-        }
-        else
-        {
-            //uxml = Resources.Load<VisualTreeAsset>(componentPath + className);
-            uxml = SkyUUIBundle.LoadUxml(className) as VisualTreeAsset;
-        }
-
-        if (uxml)
-        {
+            string componentPath = "Uxml/";
+            if (!uxml && className.IndexOf("FormControl") >= 0)
+            {
+                uxml = Resources.Load<VisualTreeAsset>(componentPath + "FormControl");
+            }
+            else
+            {
+                uxml = Resources.Load<VisualTreeAsset>(componentPath + className);
+            }
             uxml.CloneTree(this);
         }
+
+        
     }
 
     internal void init()

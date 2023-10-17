@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <Style src="project://database/Assets/Resources/Uss/FormControl.uss?fileID=7433441132597879392&amp;guid=c11f88bd09ae1a6478173743e5979081&amp;type=3#FormControl" />
+    <ui:VisualElement name="FormControl">
+        <ui:VisualElement name="Input">
+            <ui:VisualElement name="Label">
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LabelText" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Control">
+                <ui:VisualElement name="InsertNode" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Error" class="errorMsgList" />
+    </ui:VisualElement>
+</ui:UXML>
