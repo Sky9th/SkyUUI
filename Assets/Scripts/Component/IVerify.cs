@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace Sky9th.UUI
+namespace Sky9th.SkyUUI
 {
     public interface IVerify<T>
     {

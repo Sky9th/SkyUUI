@@ -1,4 +1,4 @@
-using Sky9th.UUI;
+using Sky9th.SkyUUI;
 using System.Collections;
 using System.IO;
 using System.Net;
@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UIElements;
 
-namespace Skyt9h.UUI
+namespace Sky9th.SkyUUI
 {
     public class SkyUUIController : MonoBehaviour
     {
@@ -25,47 +25,14 @@ namespace Skyt9h.UUI
         void Start()
         {
             doc = GetComponent<UIDocument>();
-#if !UNITY_EDITOR
-            StartCoroutine(LoadAssetsBundle());
-#else
-            doc.enabled = true;
-#endif
+            root = doc.rootVisualElement;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (SkyUUIBundle.UIBundle != null && root == null)
-            {
-                doc.enabled = true;
-                root = doc.rootVisualElement;
-            }
+            
         }
 
-        private IEnumerator LoadAssetsBundle()
-        {
-            Debug.Log("LoadAssetsBundle start");
-#if UNITY_STANDALONE_WIN
-            string path = Application.streamingAssetsPath + "/StandaloneWindows/skyuui_uxml";
-            SkyUUIProperties.UxmlBundle = AssetBundle.LoadFromFile(path);
-            yield return null;
-#else
-            string assetBundlePath = "StreamingAssets/WebGL/skyuui_uxml";
-            var request = UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(assetBundlePath, 0);
-            yield return request.Send();
-            AssetBundle bundle = UnityEngine.Networking.DownloadHandlerAssetBundle.GetContent(request);
-            SkyUUIBundle.UIBundle = bundle;
-#endif
-            Debug.Log(SkyUUIBundle.UIBundle);
-            Debug.Log("LoadAssetsBundle end");
-        }
-
-
-        private void OnDestroy()
-        {
-#if !UNITY_EDITOR
-            SkyUUIProperties.UxmlBundle.Unload(true);
-#endif
-        }
     }
 }

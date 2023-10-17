@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <Style src="project://database/Assets/Resources/Uss/CheckBox.uss?fileID=7433441132597879392&amp;guid=6ff3b8279bab71d4aa0b41bebbc6c3c0&amp;type=3#CheckBox" />
+    <ui:VisualElement name="CheckBoxItem">
+        <ui:VisualElement name="Btn">
+            <ui:VisualElement name="Round">
+                <ui:VisualElement name="Point" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+</ui:UXML>

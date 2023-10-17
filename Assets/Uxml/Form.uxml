@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/Common.uss?fileID=7433441132597879392&amp;guid=c65933ab4298aaa489af9c421cf1bd31&amp;type=3#Common" />
-    <Style src="project://database/Assets/UI%20Toolkit/Component/Form/Form.uss?fileID=7433441132597879392&amp;guid=fe331ffb7e638d74f85dc1b72f189608&amp;type=3#Form" />
-    <ui:VisualElement name="InsertNode" />
-    <ui:VisualElement name="FormFooter" style="flex-direction: row-reverse;">
-        <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="ssss" name="Confirm" class="primary" />
-        <ui:Button text="Reset" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Reset" class="warn" />
-    </ui:VisualElement>
-</ui:UXML>
