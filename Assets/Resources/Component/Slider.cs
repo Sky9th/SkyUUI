@@ -30,6 +30,8 @@ public class Slider : ValidatorComponent <int>
     private VisualElement barContainer;
     private VisualElement backdrop;
 
+    private SkyUUIController skyUUIController;
+
     private bool isDragging;
     private float percent;
 
@@ -47,11 +49,19 @@ public class Slider : ValidatorComponent <int>
         barContainer.RegisterCallback<MouseMoveEvent>(MovePoint);
         barContainer.RegisterCallback<ClickEvent>(ClickPoint);
 
+        barContainer.RegisterCallback<MouseMoveEvent>(MovePoint);
+
         point.RegisterCallback<MouseDownEvent>(StartMovePoint);
         point.RegisterCallback<MouseUpEvent>(EndMovePoint);
 
         backdrop.RegisterCallback<MouseDownEvent>(StartMovePoint);
         backdrop.RegisterCallback<MouseUpEvent>(EndMovePoint);
+        if (GameObject.Find("SkyUUIDocument"))
+        {
+            skyUUIController = GameObject.Find("SkyUUIDocument").GetComponent<SkyUUIController>();
+            //UIToolkitUtils.RegisterEventRecursive<MouseMoveEvent>(barContainer, evt => { Debug.Log(evt.target); skyUUIController.SetPointerCursor(); });
+            //barContainer.RegisterCallback<MouseOutEvent>(evt => { Debug.Log(evt.target);skyUUIController.SetNormalCursor(); });
+        }
     }
 
     private void SetPoint(Vector2 mousePos)

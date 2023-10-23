@@ -33,18 +33,7 @@ public class FormControl <T>: InsertableComponent
     {
         labelText = UIToolkitUtils.FindChildElement(this, "LabelText") as Label;
         errorListContainer = UIToolkitUtils.FindChildElement(this, ".errorMsgList") as Label;
-        //RegisterCallback<AttachToPanelEvent>(FindControl);
 
-    }
-
-    private void FindControl(AttachToPanelEvent evt)
-    {
-        Debug.Log(UIToolkitUtils.FindChildElement(this, "InsertNode").Children().Count());
-        if (UIToolkitUtils.FindChildElement(this, "InsertNode").Children().Count() > 0)
-        {
-            control = UIToolkitUtils.FindChildElement(this, "InsertNode").Children().First();
-            control.RegisterCallback<ChangeEvent<T>>(OnChange);
-        }
     }
 
     private void OnChange(ChangeEvent<T> evt)

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
 public class Switch : ValidatorComponent<bool>
 {
     public new class UxmlFactory : UxmlFactory<Switch, UxmlTraits> { }

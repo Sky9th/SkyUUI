@@ -47,8 +47,7 @@ public class CheckBox : ValidatorComponent<string>
         //itemUxml = SkyUUIBundle.LoadUxml("CheckBoxItem");
         itemUxml = Resources.Load<VisualTreeAsset>("Uxml/CheckBoxItem");
         item = itemUxml.Instantiate();
-
-        checkBox = this;
+        checkBox = UIToolkitUtils.FindChildElement(this, "CheckBox");
         btn = UIToolkitUtils.FindChildElement(item, "Btn");
         round = UIToolkitUtils.FindChildElement(item, "Round");
         point = UIToolkitUtils.FindChildElement(item, "Point");

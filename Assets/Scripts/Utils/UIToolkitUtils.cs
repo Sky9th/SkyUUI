@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -119,6 +117,20 @@ namespace Sky9th.SkyUUI
                 // ÒÆ³ý×ÓÔªËØ
                 VisualElement child = parent.ElementAt(0);
                 parent.Remove(child);
+            }
+        }
+        public static void RegisterEventRecursive<TEvent>(VisualElement element, Action<TEvent> callback, int currentDepth = 0) where TEvent : EventBase<TEvent>, new()
+        {
+            if (currentDepth >= 10)
+            {
+                Debug.LogWarning("Recursion depth exceeds the maximum limit, please avoid excessive recursion.");
+                return;
+            }
+
+            element.RegisterCallback<TEvent>(evt => callback(evt));
+            foreach (var child in element.Children())
+            {
+                RegisterEventRecursive(child, callback, currentDepth + 1);
             }
         }
     }

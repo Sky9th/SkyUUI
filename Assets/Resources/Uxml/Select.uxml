@@ -1,12 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
     <Style src="project://database/Assets/Resources/Uss/Select.uss?fileID=7433441132597879392&amp;guid=481543ad935498d408c22144a4e98b96&amp;type=3#Select" />
-    <ui:VisualElement name="Container">
-        <ui:VisualElement name="Input">
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Placeholder" />
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextLabel" />
-            <ui:VisualElement name="Icon">
-                <ui:VisualElement name="IconImg" style="background-image: url(&apos;project://database/Assets/Images/dropdown.png?fileID=2800000&amp;guid=44238f209772ee740ba873cd5e37a783&amp;type=3#dropdown&apos;);" />
+    <ui:VisualElement name="Select">
+        <ui:VisualElement name="Container">
+            <ui:VisualElement name="Input">
+                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Placeholder" />
+                <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="TextLabel" />
+                <ui:VisualElement name="Icon">
+                    <ui:VisualElement name="IconImg" style="background-image: url(&apos;project://database/Assets/Images/dropdown.png?fileID=2800000&amp;guid=44238f209772ee740ba873cd5e37a783&amp;type=3#dropdown&apos;);" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

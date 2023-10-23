@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UIElements;
 
 public class InsertableComponent : Component
@@ -12,6 +13,8 @@ public class InsertableComponent : Component
 
     public int originalCount = -1;
     public VisualElement insertNode;
+
+    public Action insertDone;
 
     public InsertableComponent() : base()
     {
@@ -46,6 +49,7 @@ public class InsertableComponent : Component
             {
                 insertNode.Add(moveEle[i]);
             }
+            if (insertDone != null) insertDone.Invoke();
         }
     }
 

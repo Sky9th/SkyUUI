@@ -60,9 +60,14 @@ namespace Sky9th.SkyUUI
                 if (!control.isError[i])
                 {
                     control.AddToClassList("danger");
+                    VisualElement innerControl = UIToolkitUtils.FindChildElement(control as VisualElement, control.GetType().ToString());
+                    if (innerControl != null)
+                    {
+                        innerControl.AddToClassList("danger");
+                    }
                     if (control.errorMsg.Length > 0 && control.errorMsg[i] != null)
                     {
-                        control.errorMsgList.Add(control.errorMsg[i]);
+                        control.errorMsgList.Add (control.errorMsg[i]);
                     }
                 }
             }

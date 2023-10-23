@@ -1,9 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
     <Style src="project://database/Assets/Resources/Uss/Form.uss?fileID=7433441132597879392&amp;guid=042b19ec2abba8649ad9580e02c15c7d&amp;type=3#Form" />
-    <ui:VisualElement name="InsertNode" />
-    <ui:VisualElement name="FormFooter" style="flex-direction: row-reverse;">
-        <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="ssss" name="Confirm" class="primary" />
-        <ui:Button text="Reset" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Reset" class="warn" />
+    <ui:VisualElement name="Form">
+        <ui:VisualElement name="InsertNode" />
+        <ui:VisualElement name="FormFooter" style="flex-direction: row-reverse;">
+            <ui:Button text="Confirm" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="ssss" name="Confirm" class="primary" />
+            <ui:Button text="Reset" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Reset" class="warn" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

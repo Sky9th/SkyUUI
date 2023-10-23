@@ -1,4 +1,4 @@
-Radio {
+#Radio {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -8,7 +8,7 @@ Radio {
     flex-wrap: wrap;
 }
 
-Radio #RadioItem {
+#Radio #RadioItem {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -24,11 +24,11 @@ Radio #RadioItem {
     height: 45px;
 }
 
-Radio #RadioItem:hover {
+#Radio #RadioItem:hover {
     opacity: 0.85;
 }
 
-Radio #RadioItem.checked > #Btn > #Round > #Point {
+#Radio #RadioItem.checked > #Btn > #Round > #Point {
     display: flex;
     width: 70%;
     height: 70%;
@@ -36,11 +36,11 @@ Radio #RadioItem.checked > #Btn > #Round > #Point {
     top: 15%;
 }
 
-Radio #RadioItem.checked > #Label {
+#Radio #RadioItem.checked > #Label {
     font-style: bold;
 }
 
-Radio #RadioItem > #Btn {
+#Radio #RadioItem > #Btn {
     min-width: auto;
     padding: 5px;
     min-height: auto;
@@ -52,7 +52,7 @@ Radio #RadioItem > #Btn {
     height: 20px;
 }
 
-Radio #RadioItem > #Btn > #Round {
+#Radio #RadioItem > #Btn > #Round {
     border-radius: 50%;
     border-width: 5px;
     border-color: var(--default-color);
@@ -66,7 +66,7 @@ Radio #RadioItem > #Btn > #Round {
     border-left-width: 2px;
 }
 
-Radio #RadioItem > #Btn > #Round > #Point {
+#Radio #RadioItem > #Btn > #Round > #Point {
     display: flex;
     border-radius: 50%;
     background-color: var(--default-color);
@@ -78,7 +78,7 @@ Radio #RadioItem > #Btn > #Round > #Point {
     transition: 0.3s all;
 }
 
-Radio #RadioItem > #Label {
+#Radio #RadioItem > #Label {
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -86,56 +86,56 @@ Radio #RadioItem > #Label {
     color: var(--default-color);
 }
 
-Radio.primary #RadioItem > #Btn > #Round {
+#Radio.primary #RadioItem > #Btn > #Round {
     border-color: var(--primary-color);
 }
-Radio.primary #RadioItem > #Btn > #Round > #Point {
+#Radio.primary #RadioItem > #Btn > #Round > #Point {
     background-color: var(--primary-color);
 }
-Radio.primary #RadioItem > #Label {
+#Radio.primary #RadioItem > #Label {
     color: var(--primary-color);
 }
 
 
-Radio.info #RadioItem > #Btn > #Round {
+#Radio.info #RadioItem > #Btn > #Round {
     border-color: var(--info-color);
 }
-Radio.info #RadioItem > #Btn > #Round > #Point {
+#Radio.info #RadioItem > #Btn > #Round > #Point {
     background-color: var(--info-color);
 }
-Radio.info #RadioItem > #Label {
+#Radio.info #RadioItem > #Label {
     color: var(--info-color);
 }
 
 
-Radio.warn #RadioItem > #Btn > #Round {
+#Radio.warn #RadioItem > #Btn > #Round {
     border-color: var(--warn-color);
 }
-Radio.warn #RadioItem > #Btn > #Round > #Point {
+#Radio.warn #RadioItem > #Btn > #Round > #Point {
     background-color: var(--warn-color);
 }
-Radio.warn #RadioItem > #Label {
+#Radio.warn #RadioItem > #Label {
     color: var(--warn-color);
 }
 
 
-Radio.disabled #RadioItem > #Btn > #Round {
+#Radio.disabled #RadioItem > #Btn > #Round {
     border-color: var(--disabled-color);
 }
-Radio.disabled #RadioItem > #Btn > #Round > #Point {
+#Radio.disabled #RadioItem > #Btn > #Round > #Point {
     background-color: var(--disabled-color);
 }
-Radio.disabled #RadioItem > #Label {
+#Radio.disabled #RadioItem > #Label {
     color: var(--disabled-color);
 }
 
 
-Radio.danger #RadioItem > #Btn > #Round {
+#Radio.danger #RadioItem > #Btn > #Round {
     border-color: var(--danger-color);
 }
-Radio.danger #RadioItem > #Btn > #Round > #Point {
+#Radio.danger #RadioItem > #Btn > #Round > #Point {
     background-color: var(--danger-color);
 }
-Radio.danger #RadioItem > #Label {
+#Radio.danger #RadioItem > #Label {
     color: var(--danger-color);
 }

@@ -1,51 +1,40 @@
 :root {
     --txt-color: rgb(42, 56, 79);
     --placeholder-color: rgb(153, 153, 153);
-
     --default-color: rgb(42, 56, 79);
     --default-dark-color: rgb(34, 46, 64);
     --default-light-color: rgb(71, 95, 133);
-
     --primary-color: rgb(37, 211, 143);
     --primary-dark-color: rgb(22, 129, 89);
     --primary-light-color: rgb(103, 228, 179);
-
     --disabled-color: rgb(213, 213, 213);
     --disabled-dark-color: rgb(125, 125, 125);
     --disabled-light-color: rgb(231, 231, 231);
-
     --info-color: rgb(105, 167, 196);
     --info-dark-color: rgb(48, 97, 120);
     --info-light-color: rgb(165, 202, 220);
-
     --warn-color: rgb(238, 168, 53);
     --warn-dark-color: rgb(153, 101, 13);
     --warn-light-color: rgb(244, 201, 128);
-
     --danger-color: rgb(245, 108, 108);
     --danger-dark-color: rgb(197, 14, 14);
     --danger-light-color: rgb(249, 155, 155);
-
     --panel-bg-color: rgba(247, 244, 248, 0.91);
     --panel-content-color: rgb(243, 240, 241);
     --panel-bd-color: var(--default-color);
-
     --label-normal-color: rgb(42, 56, 79);
     --btn-txt-solid-color: rgb(255, 255, 255);
-
     --btn-default-color: var(--default-color);
     --btn-primary-color: var(--primary-color);
     --btn-disabled-color: var(--disabled-color);
     --btn-info-color: var(--info-color);
     --btn-warn-color: var(--warn-color);
     --btn-txt-solid-color: rgb(255, 255, 255);
-
     --switch-default-color: var(--default-color);
     --switch-primary-color: var(--primary-color);
     --switch-disabled-color: var(--disabled-color);
     --switch-info-color: var(--info-color);
     --switch-warn-color: var(--warn-color);
-
     --slider-default-color: var(--default-color);
     --sliderBar-default-color: var(--default-dark-color);
     --slider-primary-color: var(--primary-color);
@@ -153,4 +142,13 @@ Button.solid.warn {
 
 StringFormControl {
     margin-bottom: 0;
+}
+
+.backdrop {
+    position: absolute;
+    left: -999%;
+    top: -999%;
+    width: 9999%;
+    height: 9999%;
+    background-color: rgba(0, 0, 0, 0.12);
 }

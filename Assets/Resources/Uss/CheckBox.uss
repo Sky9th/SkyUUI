@@ -1,4 +1,4 @@
-CheckBox {
+#CheckBox {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -8,7 +8,7 @@ CheckBox {
     flex-wrap: wrap;
 }
 
- CheckBox #CheckBoxItem {
+#CheckBox #CheckBoxItem {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -17,11 +17,11 @@ CheckBox {
     height: 45px;
 }
 
- CheckBox #CheckBoxItem:hover {
+#CheckBox #CheckBoxItem:hover {
     opacity: 0.85;
 }
 
- CheckBox #CheckBoxItem.checked > #Btn > #Round > #Point {
+#CheckBox #CheckBoxItem.checked > #Btn > #Round > #Point {
     display: flex;
     width: 70%;
     height: 70%;
@@ -29,11 +29,11 @@ CheckBox {
     top: 15%;
 }
 
- CheckBox #CheckBoxItem.checked > #Label {
+ #CheckBox #CheckBoxItem.checked > #Label {
     font-style: bold;
 }
 
- CheckBox #CheckBoxItem > #Btn {
+ #CheckBox #CheckBoxItem > #Btn {
     min-width: auto;
     padding: 5px;
     min-height: auto;
@@ -45,7 +45,7 @@ CheckBox {
     padding-left: 0;
 }
 
- CheckBox #CheckBoxItem > #Btn > #Round {
+ #CheckBox #CheckBoxItem > #Btn > #Round {
     border-width: 5px;
     border-color: var(--default-color);
     background-color: transparent;
@@ -58,7 +58,7 @@ CheckBox {
     border-left-width: 2px;
 }
 
- CheckBox #CheckBoxItem > #Btn > #Round > #Point {
+ #CheckBox #CheckBoxItem > #Btn > #Round > #Point {
     display: flex;
     background-color: var(--default-color);
     width: 0;
@@ -69,7 +69,7 @@ CheckBox {
     transition: 0.3s all;
 }
 
- CheckBox #CheckBoxItem > #Label {
+ #CheckBox #CheckBoxItem > #Label {
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -78,56 +78,56 @@ CheckBox {
     -unity-font: resource('Fonts/AlimamaShuHeiTi-Bold');
 }
 
- CheckBox.primary #CheckBoxItem > #Btn > #Round {
+#CheckBox.primary #CheckBoxItem > #Btn > #Round {
     border-color: var(--primary-color);
 }
- CheckBox.primary #CheckBoxItem > #Btn > #Round > #Point {
+#CheckBox.primary #CheckBoxItem > #Btn > #Round > #Point {
     background-color: var(--primary-color);
 }
- CheckBox.primary #CheckBoxItem > #Label {
+#CheckBox.primary #CheckBoxItem > #Label {
     color: var(--primary-color);
 }
 
 
- CheckBox.info #CheckBoxItem > #Btn > #Round {
+#CheckBox.info #CheckBoxItem > #Btn > #Round {
     border-color: var(--info-color);
 }
- CheckBox.info #CheckBoxItem > #Btn > #Round > #Point {
+#CheckBox.info #CheckBoxItem > #Btn > #Round > #Point {
     background-color: var(--info-color);
 }
- CheckBox.info #CheckBoxItem > #Label {
+#CheckBox.info #CheckBoxItem > #Label {
     color: var(--info-color);
 }
 
 
- CheckBox.warn #CheckBoxItem > #Btn > #Round {
+#CheckBox.warn #CheckBoxItem > #Btn > #Round {
     border-color: var(--warn-color);
 }
- CheckBox.warn #CheckBoxItem > #Btn > #Round > #Point {
+#CheckBox.warn #CheckBoxItem > #Btn > #Round > #Point {
     background-color: var(--warn-color);
 }
- CheckBox.warn #CheckBoxItem > #Label {
+#CheckBox.warn #CheckBoxItem > #Label {
     color: var(--warn-color);
 }
 
 
- CheckBox.disabled #CheckBoxItem > #Btn > #Round {
+#CheckBox.disabled #CheckBoxItem > #Btn > #Round {
     border-color: var(--disabled-color);
 }
- CheckBox.disabled #CheckBoxItem > #Btn > #Round > #Point {
+#CheckBox.disabled #CheckBoxItem > #Btn > #Round > #Point {
     background-color: var(--disabled-color);
 }
- CheckBox.disabled #CheckBoxItem > #Label {
+#CheckBox.disabled #CheckBoxItem > #Label {
     color: var(--disabled-color);
 }
 
 
- CheckBox.danger #CheckBoxItem > #Btn > #Round {
+#CheckBox.danger #CheckBoxItem > #Btn > #Round {
     border-color: var(--danger-color);
 }
- CheckBox.danger #CheckBoxItem > #Btn > #Round > #Point {
+#CheckBox.danger #CheckBoxItem > #Btn > #Round > #Point {
     background-color: var(--danger-color);
 }
- CheckBox.danger #CheckBoxItem > #Label {
+#CheckBox.danger #CheckBoxItem > #Label {
     color: var(--danger-color);
 }

@@ -13,8 +13,10 @@ public class Component : VisualElement
     {
         UxmlStringAttributeDescription maxWidth = new() { name = "maxWidth", defaultValue = "" };
         UxmlStringAttributeDescription maxHeight = new() { name = "maxHeight", defaultValue = "" };
-        UxmlStringAttributeDescription width = new() { name = "width", defaultValue = "" };
-        UxmlStringAttributeDescription height = new() { name = "height", defaultValue = "" };
+        UxmlStringAttributeDescription minWidth = new() { name = "minWidth", defaultValue = "" };
+        UxmlStringAttributeDescription minHeight = new() { name = "minHeight", defaultValue = "" };
+        UxmlStringAttributeDescription initWidth = new() { name = "initWidth", defaultValue = "" };
+        UxmlStringAttributeDescription initHeight = new() { name = "initHeight", defaultValue = "" };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
@@ -23,17 +25,21 @@ public class Component : VisualElement
 
             ate.maxWidth = maxWidth.GetValueFromBag(bag, cc);
             ate.maxHeight = maxHeight.GetValueFromBag(bag, cc);
-            ate.width = width.GetValueFromBag(bag, cc);
-            ate.height = height.GetValueFromBag(bag, cc);
+            ate.minWidth = minWidth.GetValueFromBag(bag, cc);
+            ate.minHeight = minHeight.GetValueFromBag(bag, cc);
+            ate.initWidth = initWidth.GetValueFromBag(bag, cc);
+            ate.initHeight = initHeight.GetValueFromBag(bag, cc);
 
-            ate.init();
+            ate.Init();
         }
     }
 
     public string maxWidth { get; set; }
     public string maxHeight { get; set; }
-    public string width { get; set; }
-    public string height { get; set; }
+    public string minWidth { get; set; }
+    public string minHeight { get; set; }
+    public string initWidth { get; set; }
+    public string initHeight { get; set; }
 
 
     public Component()
@@ -56,35 +62,24 @@ public class Component : VisualElement
         
     }
 
-    internal void init()
+    internal void Init()
     {
-        if (width != null) { SetSize(width, true, false); }
-        if (height != null) { SetSize(height, false, false); }
-        if (maxWidth != null) { SetSize(maxWidth, true, true); }
-        if (maxHeight != null) { SetSize(maxHeight, false, true); }
+        if (initWidth != null) { style.width = GetLength(initWidth); }
+        if (initHeight != null) { style.height = GetLength(initHeight); }
+        if (maxWidth != null) { style.maxWidth = GetLength(maxWidth); }
+        if (maxHeight != null) { style.maxHeight = GetLength(maxHeight); }
+        if (minWidth != null) { style.minWidth = GetLength(minWidth); }
+        if (minHeight != null) { style.minHeight = GetLength(minHeight); }
     }
 
-    public void SetSize(string value, bool isWidth, bool isMax)
+    private StyleLength GetLength (string value)
     {
         if (float.TryParse(value.TrimEnd('%'), out float number))
         {
             LengthUnit unit = value.EndsWith("%") ? LengthUnit.Percent : LengthUnit.Pixel;
-
-            if (isWidth)
-            {
-                if (!isMax)
-                    style.width = new Length(number, unit);
-                else
-                    style.maxWidth = new Length(number, unit);
-            }
-            else
-            {
-                if (!isMax)
-                    style.height = new Length(number, unit);
-                else
-                    style.maxHeight = new Length(number, unit);
-            }
+            return new Length(number, unit);
         }
+        return new StyleLength(StyleKeyword.Auto);
     }
 
 }
