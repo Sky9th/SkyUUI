@@ -46,7 +46,7 @@ public class Radio : ValidatorComponent<string>
         itemUxml = Resources.Load<VisualTreeAsset>("Uxml/RadioItem");
         item = itemUxml.Instantiate();
 
-        radio = this;
+        radio = UIToolkitUtils.FindChildElement(this, "Radio");
         btn = UIToolkitUtils.FindChildElement(item, "Btn");
         round = UIToolkitUtils.FindChildElement(item, "Round");
         point = UIToolkitUtils.FindChildElement(item, "Point");

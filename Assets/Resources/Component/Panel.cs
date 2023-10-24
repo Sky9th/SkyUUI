@@ -11,6 +11,7 @@ public class Panel : InsertableComponent
     public new class UxmlTraits : Component.UxmlTraits
     {
         UxmlBoolAttributeDescription resizeable = new() { name = "resizeable", defaultValue = false };
+        UxmlBoolAttributeDescription moveable = new() { name = "moveable", defaultValue = false };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
@@ -18,6 +19,7 @@ public class Panel : InsertableComponent
             var ate = ve as Panel;
 
             ate.reszieable = resizeable.GetValueFromBag(bag, cc);
+            ate.moveable = moveable.GetValueFromBag(bag, cc);
 
             ate.Init();
         }
@@ -27,6 +29,8 @@ public class Panel : InsertableComponent
 
     private float width = 0;
     private float height = 0;
+    private float left = 0;
+    private float top = 0;
 
     private VisualElement container;
     private VisualElement backdrop;
@@ -56,10 +60,18 @@ public class Panel : InsertableComponent
     private Vector2 bottomRightResizeAreaTLP;
     private Vector2 bottomRightResizeAreaBRP;
 
-    private readonly int resizeAreaSize = 3;
-    private bool isResizingWidth = false;
-    private bool isResizingHeight = false;
+    private readonly int resizeAreaSize = 5;
+    private bool isResizingWidthLeft = false;
+    private bool isResizingWidthRight = false;
+    private bool isResizingHeightTop = false;
+    private bool isResizingHeightDown = false;
     private Vector2 clickPos;
+
+    public bool moveable { get; set; }
+    private bool isMoving;
+    private readonly int moveAreaSize = 10;
+    private Vector2 topMoveAreaTLP;
+    private Vector2 topMoveAreaBRP;
 
     public Panel()
     {
@@ -78,7 +90,6 @@ public class Panel : InsertableComponent
             if (worldBound.width > 0 && worldBound.height > 0 && !(width > 0 && height > 0))
             {
                 Init();
-                Debug.Log("First Init");
             }
         });
 
@@ -87,25 +98,75 @@ public class Panel : InsertableComponent
 
     private void OnMouseUp(MouseUpEvent evt)
     {
-        isResizingWidth = false;
-        isResizingHeight = false;
+        Debug.Log("OnMouseUp");
+        EndResizing();
+        isMoving = false;
         backdrop.style.display = DisplayStyle.None;
+        SKyUUIProproperties.Cursor.SetNormalCursor(true);
         Init();
     }
 
     private void OnBackdropMove(MouseMoveEvent evt)
     {
+        Debug.Log("OnBackdropMove");
         Vector2 mouPos = evt.mousePosition;
-        if (isResizingHeight)
+
+        float realMinHeight = GetRealLength(minHeight);
+        float realMaxHeight = GetRealLength(maxHeight, true);
+        float realMinWidth = GetRealLength(minWidth);
+        float realMaxWidth = GetRealLength(maxWidth, true);
+
+        if (isMoving)
         {
-            float uHeight = mouPos.y - clickPos.y;
-            style.height = width + uHeight;
+            float uWidth = clickPos.x - mouPos.x;
+            float uHeight = clickPos.y - mouPos.y;
+            float uTop = top - uHeight;
+            float uLeft = left - uWidth;
+            Debug.Log(uTop);
+            Debug.Log(parent.worldBound.height - height);
+            if (0 < uTop && uTop < parent.worldBound.height - height)
+            {
+                style.top = uTop;
+            }
+            if (0 < uLeft && uLeft < parent.worldBound.width - width)
+            {
+                style.left = uLeft;
+            }
         }
 
-        if (isResizingWidth)
+        if (isResizingHeightDown)
+        {
+            float uHeight = mouPos.y - clickPos.y;
+            style.height = height + uHeight;
+        }
+        if (isResizingHeightTop)
+        {
+            float uHeight = clickPos.y - mouPos.y;
+            float updateHeight = height + uHeight;
+            if (realMinHeight < updateHeight && updateHeight < realMaxHeight)
+            {
+                style.top = top - uHeight;
+                style.height = updateHeight;
+            }
+        }
+        if (isResizingWidthRight)
         {
             float uWidth = mouPos.x - clickPos.x;
-            style.width = height + uWidth;
+            float updateWidth = width + uWidth;
+            if (updateWidth > 0)
+            {
+                style.width = updateWidth;
+            }
+        }
+        if (isResizingWidthLeft)
+        {
+            float uWidth = clickPos.x - mouPos.x;
+            float updateWidth = width + uWidth;
+            if (realMinWidth < updateWidth && updateWidth < realMaxWidth)
+            {
+                style.left = left - uWidth;
+                style.width = width + uWidth;
+            }
         }
     }
 
@@ -113,26 +174,49 @@ public class Panel : InsertableComponent
     {
         Vector2 mouPos = evt.mousePosition;
         clickPos = mouPos;
-        if (isInArea(topLeftResizeAreaTLP, topLeftResizeAreaBRP, mouPos) || isInArea(bottomRightResizeAreaTLP, bottomRightResizeAreaBRP, mouPos))
+        Debug.Log("OnMouseDown");
+        if (IsInArea(topLeftResizeAreaTLP, topLeftResizeAreaBRP, mouPos)) 
         {
-            isResizingWidth = true;
-            isResizingHeight = true;
+            isResizingWidthLeft = true;
+            isResizingHeightTop = true;
         }
-        else if (isInArea(topRightResizeAreaTLP, topRightResizeAreaBRP, mouPos) || isInArea(bottomLeftResizeAreaTLP, bottomLeftResizeAreaBRP, mouPos))
+        if (IsInArea(bottomRightResizeAreaTLP, bottomRightResizeAreaBRP, mouPos)) 
         {
-            isResizingWidth = true;
-            isResizingHeight = true;
+            isResizingWidthRight = true;
+            isResizingHeightDown = true;
         }
-        else if (isInArea(topResizeAreaTLP, topResizeAreaBRP, mouPos) || isInArea(bottomResizeAreaTLP, bottomResizeAreaBRP, mouPos))
+        if (IsInArea(topRightResizeAreaTLP, topRightResizeAreaBRP, mouPos))
         {
-            isResizingHeight = true;
+            isResizingWidthRight = true;
+            isResizingHeightTop = true;
         }
-        else if (isInArea(leftResizeAreaTLP, leftResizeAreaBRP, mouPos) || isInArea(rightResizeAreaTLP, rightResizeAreaBRP, mouPos))
+        if (IsInArea(bottomLeftResizeAreaTLP, bottomLeftResizeAreaBRP, mouPos))
         {
-            isResizingWidth = true;
+            isResizingWidthLeft = true;
+            isResizingHeightDown = true;
+        }
+        if (IsInArea(topResizeAreaTLP, topResizeAreaBRP, mouPos))
+        {
+            isResizingHeightTop = true;
+        }
+        if (IsInArea(bottomResizeAreaTLP, bottomResizeAreaBRP, mouPos))
+        {
+            isResizingHeightDown = true;
+        }
+        if (IsInArea(leftResizeAreaTLP, leftResizeAreaBRP, mouPos))
+        {
+            isResizingWidthLeft = true;
+        }
+        if (IsInArea(rightResizeAreaTLP, rightResizeAreaBRP, mouPos))
+        {
+            isResizingWidthRight = true;
+        }
+        if (IsInArea(topMoveAreaTLP, topMoveAreaBRP, mouPos))
+        {
+            isMoving = true;
         }
 
-        if (isResizingHeight || isResizingWidth)
+        if (LockCursor())
         {
             backdrop.style.display = DisplayStyle.Flex;
         }
@@ -140,32 +224,38 @@ public class Panel : InsertableComponent
 
     private void OnMouseOut(MouseOutEvent evt)
     {
-        SKyUUIProproperties.Cursor.SetNormalCursor(true);
+        if (!LockCursor())
+        {
+            SKyUUIProproperties.Cursor.SetNormalCursor(true);
+        }
     }
 
     private void OnMouseMove(MouseMoveEvent evt)
     {
-
         Vector2 mouPos = evt.mousePosition;
-        if (isInArea(topLeftResizeAreaTLP, topLeftResizeAreaBRP, mouPos) || isInArea(bottomRightResizeAreaTLP, bottomRightResizeAreaBRP, mouPos))
+        if (!LockCursor())
         {
-            SKyUUIProproperties.Cursor.SetResizeSlashLeftCursor(false);
-        }
-        else if (isInArea(topRightResizeAreaTLP, topRightResizeAreaBRP, mouPos) || isInArea(bottomLeftResizeAreaTLP, bottomLeftResizeAreaBRP, mouPos))
-        {
-            SKyUUIProproperties.Cursor.SetResizeSlashRightCursor(false);
-        }
-        else if (isInArea(topResizeAreaTLP, topResizeAreaBRP, mouPos) || isInArea(bottomResizeAreaTLP, bottomResizeAreaBRP, mouPos))
-        {
-            SKyUUIProproperties.Cursor.SetResizeVerticalCursor(false);
-        }
-        else if (isInArea(leftResizeAreaTLP, leftResizeAreaBRP, mouPos) || isInArea(rightResizeAreaTLP, rightResizeAreaBRP, mouPos))
-        {
-            SKyUUIProproperties.Cursor.SetResizeHorizontalCursor(false);
-        }
-        else
-        {
-            if (!isResizingWidth && !isResizingHeight)
+            if (IsInArea(topLeftResizeAreaTLP, topLeftResizeAreaBRP, mouPos) || IsInArea(bottomRightResizeAreaTLP, bottomRightResizeAreaBRP, mouPos))
+            {
+                SKyUUIProproperties.Cursor.SetResizeSlashLeftCursor(false);
+            }
+            else if (IsInArea(topRightResizeAreaTLP, topRightResizeAreaBRP, mouPos) || IsInArea(bottomLeftResizeAreaTLP, bottomLeftResizeAreaBRP, mouPos))
+            {
+                SKyUUIProproperties.Cursor.SetResizeSlashRightCursor(false);
+            }
+            else if (IsInArea(topResizeAreaTLP, topResizeAreaBRP, mouPos) || IsInArea(bottomResizeAreaTLP, bottomResizeAreaBRP, mouPos))
+            {
+                SKyUUIProproperties.Cursor.SetResizeVerticalCursor(false);
+            }
+            else if (IsInArea(leftResizeAreaTLP, leftResizeAreaBRP, mouPos) || IsInArea(rightResizeAreaTLP, rightResizeAreaBRP, mouPos))
+            {
+                SKyUUIProproperties.Cursor.SetResizeHorizontalCursor(false);
+            }
+            else if (IsInArea(topMoveAreaTLP, topMoveAreaBRP, mouPos))
+            {
+                SKyUUIProproperties.Cursor.SetMoveCursor(false);
+            }
+            else
             {
                 SKyUUIProproperties.Cursor.SetNormalCursor(true);
             }
@@ -174,11 +264,15 @@ public class Panel : InsertableComponent
 
     public new void Init ()
     {
-        base.Init();
+        //base.Init();
+        Debug.Log("Init");
 
         position = container.worldBound.position;
         width = container.worldBound.width;
         height = container.worldBound.height;
+        left = worldBound.xMin;
+        top = worldBound.yMin;
+
 
         topResizeAreaTLP = position;
         topResizeAreaBRP = new Vector2(position.x + width, position.y + resizeAreaSize);
@@ -204,11 +298,43 @@ public class Panel : InsertableComponent
         bottomRightResizeAreaTLP = new Vector2(position.x + width - resizeAreaSize, position.y + height - resizeAreaSize);
         bottomRightResizeAreaBRP = new Vector2(position.x + width, position.y + height);
 
+        topMoveAreaTLP = new Vector2(position.x, position.y + resizeAreaSize);
+        topMoveAreaBRP = new Vector2(position.x + width, position.y + resizeAreaSize + moveAreaSize);
     }
 
-    private bool isInArea (Vector2 topLeft, Vector2 rightBottom, Vector2 targetPos)
+    private bool IsInArea (Vector2 topLeft, Vector2 rightBottom, Vector2 targetPos)
     {
         return topLeft.x < targetPos.x && targetPos.x < rightBottom.x && topLeft.y < targetPos.y && targetPos.y < rightBottom.y;
+    }
+
+    private bool IsResizing()
+    {
+        return isResizingHeightDown || isResizingHeightTop || isResizingWidthLeft || isResizingWidthRight;
+    }
+    private void EndResizing()
+    {
+        isResizingHeightDown = isResizingHeightTop = isResizingWidthLeft = isResizingWidthRight = false;
+    }
+
+    private bool LockCursor ()
+    {
+        return IsResizing() || isMoving;
+    }
+
+    private float GetRealLength(string value, bool max = false)
+    {
+        if (value == "")
+        {
+            return max ? float.MaxValue : 0;
+        }
+        if (minHeight.EndsWith("%"))
+        {
+            return parent.worldBound.height * float.Parse(value.Replace("%", ""));
+        }
+        else
+        {
+            return float.Parse(value);
+        }
     }
 
 }

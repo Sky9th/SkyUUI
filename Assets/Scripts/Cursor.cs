@@ -104,6 +104,11 @@ namespace Sky9th.SkyUUI
             this.propagation = propagation;
             UnityEngine.Cursor.SetCursor(textCursor, new Vector2(62, 62), CursorMode.Auto);
         }
+        public void SetMoveCursor(bool propagation = true)
+        {
+            this.propagation = propagation;
+            UnityEngine.Cursor.SetCursor(moveCursor, new Vector2(62, 62), CursorMode.Auto);
+        }
     }
 
 }

@@ -16,6 +16,7 @@
     border-bottom-color: var(--panel-bd-color);
     margin: 0;
     padding: 15px;
+    padding-top: 20px;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
