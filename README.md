@@ -1,8 +1,6 @@
 # SkyUUI
 ## Unity UI Toolkit extension
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](http://www.sky9th.cn)
-
 Add custom control for Unity UI toolkit and UI demo
 
 ## Installation
