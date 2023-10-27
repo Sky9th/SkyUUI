@@ -37,4 +37,4 @@ WindowStandalone
 | **FormControl** | In program | **Steps** | Plan |
 
 ## License
-MIT
+Apache-2.0 license
