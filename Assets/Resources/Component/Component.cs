@@ -11,6 +11,7 @@ public class Component : VisualElement
     // Add the two custom UXML attributes.
     public new class UxmlTraits : VisualElement.UxmlTraits
     {
+        UxmlStringAttributeDescription ID = new() { name = "ID", defaultValue = "" };
         UxmlStringAttributeDescription maxWidth = new() { name = "maxWidth", defaultValue = "" };
         UxmlStringAttributeDescription maxHeight = new() { name = "maxHeight", defaultValue = "" };
         UxmlStringAttributeDescription minWidth = new() { name = "minWidth", defaultValue = "" };
@@ -23,6 +24,7 @@ public class Component : VisualElement
             base.Init(ve, bag, cc);
             var ate = ve as Component;
 
+            ate.ID = ID.GetValueFromBag(bag, cc);
             ate.maxWidth = maxWidth.GetValueFromBag(bag, cc);
             ate.maxHeight = maxHeight.GetValueFromBag(bag, cc);
             ate.minWidth = minWidth.GetValueFromBag(bag, cc);
@@ -34,6 +36,7 @@ public class Component : VisualElement
         }
     }
 
+    public string ID { get; set; }
     public string maxWidth { get; set; }
     public string maxHeight { get; set; }
     public string minWidth { get; set; }

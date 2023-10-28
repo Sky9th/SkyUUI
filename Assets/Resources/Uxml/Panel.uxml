@@ -2,7 +2,9 @@
     <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
     <Style src="project://database/Assets/Resources/Uss/Panel.uss?fileID=7433441132597879392&amp;guid=c17f342a8967d304c8e3b3ea70bb7ce1&amp;type=3#Panel" />
     <ui:VisualElement name="Panel">
-        <ui:VisualElement name="InsertNode" />
-        <ui:VisualElement name="backdrop" class="backdrop" />
+        <ui:ScrollView>
+            <ui:VisualElement name="InsertNode" />
+        </ui:ScrollView>
+        <ui:VisualElement name="Backdrop" class="backdrop" />
     </ui:VisualElement>
 </ui:UXML>

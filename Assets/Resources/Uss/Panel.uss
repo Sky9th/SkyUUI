@@ -15,9 +15,131 @@
     border-top-color: var(--panel-bd-color);
     border-bottom-color: var(--panel-bd-color);
     margin: 0;
-    padding: 15px;
-    padding-top: 20px;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
+}
+
+#Panel #InsertNode {
+    overflow: hidden;
+}
+
+#Panel ScrollView {
+    margin: 0;
+    padding: 15px;
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+#Panel ScrollView #unity-contennt-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Panel Scroller.unity-scroller--vertical {
+    position: absolute;
+    right: -10px;
+    top: 0;
+    height: 100%;
+    width: 8px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#Panel Scroller.unity-scroller--horizontal {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 8px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+#Panel:hover Scroller {
+    opacity: 1;
+}
+
+#Panel Scroller #unity-low-button {
+    display: none;
+}
+
+#Panel Scroller #unity-high-button {
+    display: none;
+}
+
+#Panel Scroller.unity-scroller--vertical #unity-slider {
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    border-radius: 4px;
+}
+
+#Panel Scroller.unity-scroller--horizontal #unity-slider {
+    margin: 0;
+    padding: 0;
+    height: 8px;
+    border-radius: 4px;
+}
+
+#Panel Scroller.unity-scroller--vertical #unity-slider .unity-slider__input {
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#Panel Scroller.unity-scroller--horizontal #unity-slider .unity-slider__input {
+    margin: 0;
+    padding: 0;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#Panel Scroller.unity-scroller--vertical #unity-dragger-contaienr {
+}
+
+#Panel Scroller #unity-tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#Panel Scroller #unity-dragger-border {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#Panel Scroller.unity-scroller--vertical #unity-dragger {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 8px;
+    border-radius: 4px;
+    background-color: var(--scroller-bg-color);
+    border: 0;
+}
+
+#Panel Scroller.unity-scroller--horizontal #unity-dragger {
+    width: 100%;
+    height: 8px;
+    background-color: var(--scroller-bg-color);
+    border-radius: 4px;
 }

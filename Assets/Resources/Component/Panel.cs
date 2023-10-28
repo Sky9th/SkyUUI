@@ -122,8 +122,6 @@ public class Panel : InsertableComponent
             float uHeight = clickPos.y - mouPos.y;
             float uTop = top - uHeight;
             float uLeft = left - uWidth;
-            Debug.Log(uTop);
-            Debug.Log(parent.worldBound.height - height);
             if (0 < uTop && uTop < parent.worldBound.height - height)
             {
                 style.top = uTop;
@@ -172,6 +170,7 @@ public class Panel : InsertableComponent
 
     private void OnMouseDown(MouseDownEvent evt)
     {
+        BringToFront();
         Vector2 mouPos = evt.mousePosition;
         clickPos = mouPos;
         Debug.Log("OnMouseDown");
@@ -219,6 +218,7 @@ public class Panel : InsertableComponent
         if (LockCursor())
         {
             backdrop.style.display = DisplayStyle.Flex;
+            backdrop.BringToFront();
         }
     }
 
@@ -264,9 +264,6 @@ public class Panel : InsertableComponent
 
     public new void Init ()
     {
-        //base.Init();
-        Debug.Log("Init");
-
         position = container.worldBound.position;
         width = container.worldBound.width;
         height = container.worldBound.height;

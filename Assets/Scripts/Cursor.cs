@@ -67,47 +67,47 @@ namespace Sky9th.SkyUUI
         public void SetResizeHorizontalCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(resizeHorizontalCursor, new Vector2(64, 64), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(resizeHorizontalCursor, new Vector2(16, 16), CursorMode.Auto);
         }
 
         public void SetResizeVerticalCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(resizeVerticalCursor, new Vector2(64, 64), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(resizeVerticalCursor, new Vector2(16, 16), CursorMode.Auto);
         }
         public void SetResizeSlashLeftCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(resizeSlashLeftCursor, new Vector2(64, 64), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(resizeSlashLeftCursor, new Vector2(16, 16), CursorMode.Auto);
         }
 
         public void SetResizeSlashRightCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(resizeSlashRightCursor, new Vector2(64, 64), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(resizeSlashRightCursor, new Vector2(16, 16), CursorMode.Auto);
         }
 
         public void SetNormalCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(normalCursor, new Vector2(22, 5), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(normalCursor, new Vector2(5.4f, 1.25f), CursorMode.Auto);
         }
 
         public void SetPointCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(pointerCursor, new Vector2(55, 5), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(pointerCursor, new Vector2(13.5f, 1.25f), CursorMode.Auto);
         }
 
         public void SetTextCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(textCursor, new Vector2(62, 62), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(textCursor, new Vector2(15.5f, 15.5f), CursorMode.Auto);
         }
         public void SetMoveCursor(bool propagation = true)
         {
             this.propagation = propagation;
-            UnityEngine.Cursor.SetCursor(moveCursor, new Vector2(62, 62), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(moveCursor, new Vector2(16, 16), CursorMode.Auto);
         }
     }
 

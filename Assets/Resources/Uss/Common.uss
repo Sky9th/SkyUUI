@@ -19,9 +19,11 @@
     --danger-color: rgb(245, 108, 108);
     --danger-dark-color: rgb(197, 14, 14);
     --danger-light-color: rgb(249, 155, 155);
+    --scroller-bg-color: var(--default-dark-color);
     --panel-bg-color: rgba(247, 244, 248, 0.91);
     --panel-content-color: rgb(243, 240, 241);
     --panel-bd-color: var(--default-color);
+    --table-bd-color: var(--default-color);
     --label-normal-color: rgb(42, 56, 79);
     --btn-txt-solid-color: rgb(255, 255, 255);
     --btn-default-color: var(--default-color);
@@ -54,6 +56,11 @@
     align-items: center;
     justify-content: center;
     align-self: auto;
+}
+
+#InsertNode {
+    width: 100%;
+    height: 100%;
 }
 
 Button {
@@ -151,4 +158,77 @@ StringFormControl {
     width: 9999%;
     height: 9999%;
     background-color: rgba(0, 0, 0, 0.12);
+}
+
+#Background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Static {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Float {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#Mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+#Table {
+    width: 100%;
+    height: 100%;
+}
+
+#Table #Theader {
+    flex-shrink: 0;
+}
+
+#Table #Tbody {
+    flex-shrink: 0;
+}
+
+#Table #Tfooter {
+    flex-shrink: 0;
+}
+
+#Table #tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-shrink: 0;
+}
+
+#Table #th {
+    font-weight: bold;
+    -unity-font-style: bold;
+    padding: 12px;
+    border-bottom-width: 1px;
+    border-color: var(--table-bd-color);
+    width: 100%;
+    flex-shrink: 1;
+}
+
+#Table #td {
+    padding: 12px;
+    border-bottom-width: 1px;
+    border-color: var(--table-bd-color);
+    width: 100%;
+    flex-shrink: 1;
 }
