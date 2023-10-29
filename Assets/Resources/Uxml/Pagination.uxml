@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <Style src="project://database/Assets/Resources/Uss/Pagination.uss?fileID=7433441132597879392&amp;guid=27324af4786aeef4187cbf52530beead&amp;type=3#Pagination" />
+    <ui:VisualElement name="Pagination">
+        <Select Choice="5,10,25,50" value="5" name="SizeSelect" />
+        <ui:VisualElement name="PaginationSelector">
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="First">
+                <ui:VisualElement />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Prev">
+                <ui:VisualElement />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MorePrev" text="..." />
+            <ui:VisualElement name="Pager">
+                <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" class="current" />
+                <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+            </ui:VisualElement>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="MoreNext" text="..." />
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Next">
+                <ui:VisualElement />
+            </ui:Button>
+            <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Last">
+                <ui:VisualElement />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="PaginationInput">
+            <TextInputField Placeholder="Page" name="TargetPage" />
+            <ui:Button text="Go" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Confirm">
+                <ui:VisualElement />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -4,7 +4,7 @@
     <ui:VisualElement name="Background" />
     <ui:VisualElement name="Static" />
     <ui:VisualElement name="Float" style="top: 4px; left: 1px;">
-        <Panel Width="500" Height="700" width="500" height="650" minWidth="550" minHeight="650" initWidth="500" initHeight="650" style="left: 100px; top: 100px;">
+        <Panel Width="500" Height="700" width="500" height="650" minWidth="550" minHeight="650" initWidth="500" init-width="500" init-height="500" style="left: 100px; top: 100px;">
             <Form>
                 <StringFormControl>
                     <TextInputField Validator="Required" />
@@ -29,9 +29,25 @@
                 </BoolFormControl>
             </Form>
         </Panel>
-        <Panel maxHeight="800" minWidth="600" minHeight="600" initHeight="600" style="position: absolute; left: 700px; top: 100px;">
-            <Table headerFixed="true" initHeight="500" />
-            <Table />
+        <Panel maxHeight="800" minWidth="600" minHeight="600" init-width="800" init-height="600" style="position: absolute; left: 600px; top: 100px;">
+            <Table headerFixed="true" initHeight="500">
+                <Pagination total="101" current="3" />
+            </Table>
+            <ui:ProgressBar value="71.7" class="danger" />
+            <ui:ProgressBar value="71.7" />
+            <ui:ProgressBar value="71.7" class="info" />
+            <ui:ProgressBar value="71.7" class="primary" />
+            <ui:ProgressBar value="71.7" class="warn" />
+            <ui:ProgressBar value="71.7" class="disabled" />
         </Panel>
+        <Panel initWidth="500" initHeight="500" style="position: absolute; left: 1400px; top: 100px;">
+            <ui:Foldout text="Foldout">
+                <ui:Foldout text="Foldout">
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                    <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" />
+                </ui:Foldout>
+            </ui:Foldout>
+        </Panel>
+        <Modal Width="500" Height="250" style="position: absolute; left: 100px; top: 800px;" />
     </ui:VisualElement>
 </ui:UXML>

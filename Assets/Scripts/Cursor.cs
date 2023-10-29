@@ -35,7 +35,7 @@ namespace Sky9th.SkyUUI
             SKyUUIProproperties.Document.rootVisualElement.RegisterCallback<MouseMoveEvent>(OnMouseMove);
         }
 
-        // Update is called once per frame
+        // UpdateText is called once per frame
         void Update()
         {
 

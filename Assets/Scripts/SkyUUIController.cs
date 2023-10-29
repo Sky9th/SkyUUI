@@ -20,7 +20,7 @@ namespace Sky9th.SkyUUI
             root = doc.rootVisualElement;
         }
 
-        // Update is called once per frame
+        // UpdateText is called once per frame
         void Update()
         {
         }

@@ -12,13 +12,13 @@ public class Component : VisualElement
     // Add the two custom UXML attributes.
     public new class UxmlTraits : VisualElement.UxmlTraits
     {
-        UxmlStringAttributeDescription ID = new() { name = "ID", defaultValue = "" };
-        UxmlStringAttributeDescription maxWidth = new() { name = "maxWidth", defaultValue = "" };
-        UxmlStringAttributeDescription maxHeight = new() { name = "maxHeight", defaultValue = "" };
-        UxmlStringAttributeDescription minWidth = new() { name = "minWidth", defaultValue = "" };
-        UxmlStringAttributeDescription minHeight = new() { name = "minHeight", defaultValue = "" };
-        UxmlStringAttributeDescription initWidth = new() { name = "initWidth", defaultValue = "" };
-        UxmlStringAttributeDescription initHeight = new() { name = "initHeight", defaultValue = "" };
+        UxmlStringAttributeDescription ID = new() { name = "ID", defaultValue = "",  };
+        UxmlStringAttributeDescription maxWidth = new() { name = "max-width", defaultValue = "" };
+        UxmlStringAttributeDescription maxHeight = new() { name = "max-height", defaultValue = "" };
+        UxmlStringAttributeDescription minWidth = new() { name = "min-width", defaultValue = "" };
+        UxmlStringAttributeDescription minHeight = new() { name = "min-height", defaultValue = "" };
+        UxmlStringAttributeDescription initWidth = new() { name = "init-width", defaultValue = "" };
+        UxmlStringAttributeDescription initHeight = new() { name = "init-height", defaultValue = "" };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {

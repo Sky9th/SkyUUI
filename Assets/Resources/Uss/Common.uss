@@ -1,4 +1,5 @@
 :root {
+    --txt-solid-color: rgb(255, 255, 255);
     --txt-color: rgb(42, 56, 79);
     --placeholder-color: rgb(153, 153, 153);
     --default-color: rgb(42, 56, 79);
@@ -26,13 +27,12 @@
     --table-bd-color: var(--default-light-color);
     --divider-color: var(--default-light-color);
     --label-normal-color: rgb(42, 56, 79);
-    --btn-txt-solid-color: rgb(255, 255, 255);
+    --btn-txt-solid-color: var(--txt-solid-color);
     --btn-default-color: var(--default-color);
     --btn-primary-color: var(--primary-color);
     --btn-disabled-color: var(--disabled-color);
     --btn-info-color: var(--info-color);
     --btn-warn-color: var(--warn-color);
-    --btn-txt-solid-color: rgb(255, 255, 255);
     --switch-default-color: var(--default-color);
     --switch-primary-color: var(--primary-color);
     --switch-disabled-color: var(--disabled-color);
@@ -50,6 +50,20 @@
     --sliderBar-warn-color: var(--warn-dark-color);
     --slider-danger-color: var(--danger-color);
     --sliderBar-danger-color: var(--danger-dark-color);
+    --progress-default-color: var(--default-color);
+    --progressBar-default-color: var(--default-dark-color);
+    --progress-primary-color: var(--primary-color);
+    --progressBar-primary-color: var(--primary-dark-color);
+    --progress-disabled-color: var(--disabled-color);
+    --progressBar-disabled-color: var(--disabled-dark-color);
+    --progress-info-color: var(--info-color);
+    --progressBar-info-color: var(--info-dark-color);
+    --progress-warn-color: var(--warn-color);
+    --progressBar-warn-color: var(--warn-dark-color);
+    --progress-danger-color: var(--danger-color);
+    --progressBar-danger-color: var(--danger-dark-color);
+    --pagiantion-default-current-bg-color: var(--default-color);
+    --pagiantion-default-current-txt-color: var(--txt-solid-color);
 }
 
 #container {
@@ -64,7 +78,6 @@
     height: 100%;
 }
 
-/* Button start */
 Button {
     background-color: rgb(243, 240, 243);
     color: var(--btn-default-color);
@@ -141,7 +154,6 @@ Button.solid.info {
 Button.solid.warn {
     background-color: var(--btn-warn-color);
 }
-/* Button ebd */
 
 .errorMsgList {
     width: 100%;
@@ -154,7 +166,6 @@ StringFormControl {
     margin-bottom: 0;
 }
 
-/* Layer start */
 .backdrop {
     position: absolute;
     left: -999%;
@@ -195,9 +206,7 @@ StringFormControl {
     top: 0;
     width: 100%;
 }
-/* Layer end */
 
-/* Table start */
 #Table {
     width: 100%;
     height: 100%;
@@ -244,9 +253,7 @@ StringFormControl {
     width: 100%;
     flex-shrink: 1;
 }
-/* Table end */
 
-/* ScrollView start */
 ScrollView {
     margin: 0;
     width: 100%;
@@ -373,4 +380,73 @@ Scroller.unity-scroller--horizontal #unity-dragger {
 Scroller.unity-scroller--horizontal #unity-dragger:hover {
     opacity: 1;
 }
-/* ScrollView end */
+
+ProgressBar.unity-progress-bar {
+    height: 26px;
+}
+
+ProgressBar.unity-progress-bar > .unity-progress-bar__container {
+    height: 100%;
+}
+
+ProgressBar.unity-progress-bar > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-default-color);
+    height: 100%;
+    border-radius: 13px;
+    border-width: 0;
+}
+
+ProgressBar.unity-progress-bar > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-default-color);
+    margin: 0;
+    padding: 0;
+    border-radius: 13px;
+    border-left: 13px;
+}
+
+ProgressBar.unity-progress-bar > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__title-container {
+}
+
+ProgressBar.unity-progress-bar > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__title-container > .unity-text-element {
+    color: var(--txt-solid-color);
+}
+
+ProgressBar.unity-progress-bar.info > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-info-color);
+}
+
+ProgressBar.unity-progress-bar.info > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-info-color);
+}
+
+ProgressBar.unity-progress-bar.primary > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-primary-color);
+}
+
+ProgressBar.unity-progress-bar.primary > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-primary-color);
+}
+
+ProgressBar.unity-progress-bar.warn > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-warn-color);
+}
+
+ProgressBar.unity-progress-bar.warn > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-warn-color);
+}
+
+ProgressBar.unity-progress-bar.danger > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-danger-color);
+}
+
+ProgressBar.unity-progress-bar.danger > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-danger-color);
+}
+
+ProgressBar.unity-progress-bar.disabled > .unity-progress-bar__container > .unity-progress-bar__background {
+    background-color: var(--progressBar-disabled-color);
+}
+
+ProgressBar.unity-progress-bar.disabled > .unity-progress-bar__container > .unity-progress-bar__background > .unity-progress-bar__progress {
+    background-color: var(--progress-disabled-color);
+}

@@ -15,6 +15,7 @@ public class Select : ValidatorComponent<string>
         UxmlStringAttributeDescription placeholder = new() { name = "placeholder", defaultValue = "" };
         UxmlEnumAttributeDescription<TypeEnum> type = new() { name = "Type" };
         UxmlStringAttributeDescription choice = new() { name = "Choice", defaultValue = "" };
+        UxmlStringAttributeDescription value = new() { name = "value", defaultValue = "" };
         UxmlBoolAttributeDescription multiple = new() { name = "Multiple", defaultValue = false };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
@@ -25,6 +26,7 @@ public class Select : ValidatorComponent<string>
             ate.placeholder = placeholder.GetValueFromBag(bag, cc);
             ate.choice = choice.GetValueFromBag(bag, cc);
             ate.multiple = multiple.GetValueFromBag(bag, cc);
+            ate.value = value.GetValueFromBag(bag, cc);
             ate.type = type.GetValueFromBag(bag, cc);
             ate.Init();
         }
@@ -131,9 +133,10 @@ public class Select : ValidatorComponent<string>
         }
         select.AddToClassList(type.ToString().ToLower());
         placeholderLabel.text = placeholder;
+        SetValue(value);
     }
 
-    public void Update()
+    public void UpdateText()
     {
         textLabel.text = value;
         if (value.Length > 0)
@@ -177,6 +180,12 @@ public class Select : ValidatorComponent<string>
     {
         Label menuItemLabel = UIToolkitUtils.FindChildElement(evt.target as VisualElement, "MenuItemLabel") as Label;
         string currentValue = menuItemLabel.text;
+        SetValue(currentValue);
+        HideMenu();
+    }
+
+    private void SetValue (string currentValue)
+    {
         bool update = false;
         if (multiple)
         {
@@ -189,7 +198,8 @@ public class Select : ValidatorComponent<string>
                 valueList.Add(currentValue);
             }
             update = true;
-        } else
+        }
+        else
         {
             if (!valueList.Contains(currentValue))
             {
@@ -208,7 +218,6 @@ public class Select : ValidatorComponent<string>
             SendEvent(changeEvent);
         }
         value = valueStr;
-        Update();
-        HideMenu();
+        UpdateText();
     }
 }
