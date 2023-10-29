@@ -6,6 +6,7 @@
     padding-top: 0;
     padding-bottom: 0;
     height: 40px;
+    overflow: visible;
 }
 
 #Slider > #BarContainer {
@@ -16,7 +17,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
- 
+
 #Slider > #BarContainer > #Bar {
     height: 100%;
     border-radius: 3px;
@@ -66,72 +67,82 @@
     color: var(--slider-default-color);
 }
 
-
 #Slider.primary > #BarContainer > #Bar > #UnChecked {
     background-color: var(--sliderBar-primary-color);
 }
+
 #Slider.primary > #BarContainer > #Bar > #Checked {
     background-color: var(--slider-primary-color);
 }
+
 #Slider.primary > #BarContainer > #Point {
     background-color: var(--slider-primary-color);
 }
+
 #Slider.primary > #BarContainer > #Point > #Tips {
     color: var(--slider-primary-color);
 }
 
-
 #Slider.info > #BarContainer > #Bar > #UnChecked {
     background-color: var(--sliderBar-info-color);
 }
+
 #Slider.info > #BarContainer > #Bar > #Checked {
     background-color: var(--slider-info-color);
 }
+
 #Slider.info > #BarContainer > #Point {
     background-color: var(--slider-info-color);
 }
+
 #Slider.info > #BarContainer > #Point > #Tips {
     color: var(--slider-info-color);
 }
 
-
 #Slider.warn > #BarContainer > #Bar > #UnChecked {
     background-color: var(--sliderBar-warn-color);
 }
+
 #Slider.warn > #BarContainer > #Bar > #Checked {
     background-color: var(--slider-warn-color);
 }
+
 #Slider.warn > #BarContainer > #Point {
     background-color: var(--slider-warn-color);
 }
+
 #Slider.warn > #BarContainer > #Point > #Tips {
     color: var(--slider-warn-color);
 }
 
-
 #Slider.disabled > #BarContainer > #Bar > #UnChecked {
     background-color: var(--sliderBar-disabled-color);
 }
+
 #Slider.disabled > #BarContainer > #Bar > #Checked {
     background-color: var(--slider-disabled-color);
 }
+
 #Slider.disabled > #BarContainer > #Point {
     background-color: var(--slider-disabled-color);
 }
+
 #Slider.disabled > #BarContainer > #Point > #Tips {
     color: var(--slider-disabled-color);
 }
 
-
 #Slider.danger > #BarContainer > #Bar > #UnChecked {
     background-color: var(--sliderBar-danger-color);
 }
+
 #Slider.danger > #BarContainer > #Bar > #Checked {
     background-color: var(--slider-danger-color);
 }
+
 #Slider.danger > #BarContainer > #Point {
     background-color: var(--slider-danger-color);
 }
+
 #Slider.danger > #BarContainer > #Point > #Tips {
     color: var(--slider-danger-color);
 }

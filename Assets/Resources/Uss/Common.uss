@@ -22,8 +22,9 @@
     --scroller-bg-color: var(--default-dark-color);
     --panel-bg-color: rgba(247, 244, 248, 0.91);
     --panel-content-color: rgb(243, 240, 241);
-    --panel-bd-color: var(--default-color);
-    --table-bd-color: var(--default-color);
+    --panel-bd-color: var(--default-light-color);
+    --table-bd-color: var(--default-light-color);
+    --divider-color: var(--default-light-color);
     --label-normal-color: rgb(42, 56, 79);
     --btn-txt-solid-color: rgb(255, 255, 255);
     --btn-default-color: var(--default-color);
@@ -63,6 +64,7 @@
     height: 100%;
 }
 
+/* Button start */
 Button {
     background-color: rgb(243, 240, 243);
     color: var(--btn-default-color);
@@ -139,6 +141,7 @@ Button.solid.info {
 Button.solid.warn {
     background-color: var(--btn-warn-color);
 }
+/* Button ebd */
 
 .errorMsgList {
     width: 100%;
@@ -151,6 +154,7 @@ StringFormControl {
     margin-bottom: 0;
 }
 
+/* Layer start */
 .backdrop {
     position: absolute;
     left: -999%;
@@ -158,6 +162,7 @@ StringFormControl {
     width: 9999%;
     height: 9999%;
     background-color: rgba(0, 0, 0, 0.12);
+    display: none;
 }
 
 #Background {
@@ -190,14 +195,21 @@ StringFormControl {
     top: 0;
     width: 100%;
 }
+/* Layer end */
 
+/* Table start */
 #Table {
     width: 100%;
     height: 100%;
+    padding: 15px;
 }
 
 #Table #Theader {
     flex-shrink: 0;
+}
+
+#Table #Theader #th {
+    border-bottom-width: 2px;
 }
 
 #Table #Tbody {
@@ -232,3 +244,133 @@ StringFormControl {
     width: 100%;
     flex-shrink: 1;
 }
+/* Table end */
+
+/* ScrollView start */
+ScrollView {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+ScrollView > #unity-content-and-vertical-scroll-container > #unity-content-viewport > #unity-contennt-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ScrollView:hover > #unity-content-and-vertical-scroll-container > Scroller {
+    opacity: 1;
+}
+
+Scroller.unity-scroller--vertical {
+    position: absolute;
+    right: -10px;
+    top: 0;
+    height: 100%;
+    width: 8px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+Scroller.unity-scroller--horizontal {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 8px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+Scroller #unity-low-button {
+    display: none;
+}
+
+Scroller #unity-high-button {
+    display: none;
+}
+
+Scroller.unity-scroller--vertical #unity-slider {
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    border-radius: 4px;
+}
+
+Scroller.unity-scroller--horizontal #unity-slider {
+    margin: 0;
+    padding: 0;
+    height: 8px;
+    border-radius: 4px;
+}
+
+Scroller.unity-scroller--vertical #unity-slider .unity-slider__input {
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+Scroller.unity-scroller--horizontal #unity-slider .unity-slider__input {
+    margin: 0;
+    padding: 0;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+Scroller.unity-scroller--vertical #unity-dragger-contaienr {
+}
+
+Scroller #unity-tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+Scroller #unity-dragger-border {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+Scroller.unity-scroller--vertical #unity-dragger {
+    width: 8px;
+    border-radius: 4px;
+    background-color: var(--scroller-bg-color);
+    border: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+Scroller.unity-scroller--vertical #unity-dragger:hover {
+    opacity: 1;
+}
+
+Scroller.unity-scroller--horizontal #unity-dragger {
+    width: 100%;
+    height: 8px;
+    background-color: var(--scroller-bg-color);
+    border-radius: 4px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+Scroller.unity-scroller--horizontal #unity-dragger:hover {
+    opacity: 1;
+}
+/* ScrollView end */

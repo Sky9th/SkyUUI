@@ -1,5 +1,6 @@
 using Sky9th.SkyUUI;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,27 +11,30 @@ public class Table : InsertableComponent
     // Add the two custom UXML attributes.
     public new class UxmlTraits : Component.UxmlTraits
     {
-        UxmlBoolAttributeDescription resizeable = new() { name = "resizeable", defaultValue = false };
+        UxmlBoolAttributeDescription headerFixed = new() { name = "headerFixed", defaultValue = false };
 
         public override void Init(VisualElement ve, IUxmlAttributes bag, CreationContext cc)
         {
             base.Init(ve, bag, cc);
             var ate = ve as Table;
 
-            //ate.reszieable = resizeable.GetValueFromBag(bag, cc);
+            ate.headerFixed = headerFixed.GetValueFromBag(bag, cc);
             ate.Init();
         }
     }
 
+    public bool headerFixed { get; set; }
+
     public Table()
     {
-        name = "Table1";
-        AddToClassList("Table");
+        OnMounted += Mounted;
     }
 
-    public new void Init()
+    public void Mounted()
     {
-        Debug.Log(parent);
+        if (headerFixed)
+        {
+        }
     }
 
 

@@ -45,6 +45,7 @@ public class ValidatorComponent <T> : InsertableComponent, IVerify <T>
 
     public void OnChange(ChangeEvent<T> evt)
     {
+        Debug.Log("OnChange");
         Verify();
     }
 

@@ -1,4 +1,5 @@
 using Sky9th.SkyUUI;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -43,6 +44,12 @@ public class Component : VisualElement
     public string minHeight { get; set; }
     public string initWidth { get; set; }
     public string initHeight { get; set; }
+    public float width { get; set; }
+    public float height { get; set; }
+
+    private bool isMounted = false;
+
+    public Action OnMounted;
 
 
     public Component()
@@ -62,7 +69,22 @@ public class Component : VisualElement
             uxml.CloneTree(this);
         }
 
-        
+        RegisterCallback<GeometryChangedEvent>(Mounted);
+
+    }
+
+    internal void Mounted (GeometryChangedEvent evt)
+    {
+        if (worldBound.width > 0 && worldBound.height > 0 && !isMounted)
+        {
+            width = worldBound.width;
+            height = worldBound.height;
+            isMounted = true;
+            if (OnMounted != null)
+            {
+                OnMounted.Invoke();
+            }
+        }
     }
 
     internal void Init()

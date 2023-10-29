@@ -46,8 +46,13 @@ namespace Sky9th.SkyUUI
 
         public static bool Verify<U>(U control) where U : IVerify<T>
         {
-            control.RemoveFromClassList("danger");
             VisualElement errorMsgContainer = UIToolkitUtils.FindChildElement(control as VisualElement, ".errorMsg");
+            VisualElement innerControl = UIToolkitUtils.FindChildElement(control as VisualElement, control.GetType().ToString());
+            control.RemoveFromClassList("danger");
+            if (innerControl != null)
+            {
+                innerControl.RemoveFromClassList("danger");
+            }
             control.errorMsgList = new();
             if (errorMsgContainer != null)
             {
@@ -60,7 +65,6 @@ namespace Sky9th.SkyUUI
                 if (!control.isError[i])
                 {
                     control.AddToClassList("danger");
-                    VisualElement innerControl = UIToolkitUtils.FindChildElement(control as VisualElement, control.GetType().ToString());
                     if (innerControl != null)
                     {
                         innerControl.AddToClassList("danger");

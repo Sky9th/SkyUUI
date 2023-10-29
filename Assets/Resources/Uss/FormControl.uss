@@ -4,7 +4,10 @@
     padding: 0;
     height: auto;
     min-height: auto;
+    padding-bottom: 12px;
     margin-bottom: 20px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--divider-color);
 }
 
 #FormControl > #Input {
@@ -17,6 +20,7 @@
     padding-right: 0;
     padding-left: 0;
     height: 100%;
+    justify-content: space-between;
 }
 
 #FormControl > #Input > #Label {

@@ -106,6 +106,7 @@ public class Select : ValidatorComponent<string>
         root = GameObject.FindFirstObjectByType<UIDocument>().rootVisualElement;
         root.Add(menu);
         menu.style.position = Position.Absolute;
+        menu.style.width = select.worldBound.width;
         menu.style.left = select.worldBound.position.x;
         menu.style.top = select.worldBound.position.y + select.worldBound.height;
         menu.style.display = DisplayStyle.Flex;
@@ -121,7 +122,7 @@ public class Select : ValidatorComponent<string>
         menuDisplay = false;
     }
 
-    public void Init()
+    public new void Init()
     {
         choiceList = choice.Split(",");
         for (int i = 0; i < choiceList.Length; i++)

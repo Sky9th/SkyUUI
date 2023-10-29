@@ -14,7 +14,7 @@ public class InsertableComponent : Component
     public int originalCount = -1;
     public VisualElement insertNode;
 
-    public Action insertDone;
+    public Action InsertDone;
 
     public InsertableComponent() : base()
     {
@@ -28,7 +28,6 @@ public class InsertableComponent : Component
         if (moveEle.Count == 0)
         {
             int count = 0;
-            // 遍历所有子元素
             foreach (VisualElement child in Children())
             {
                 if (count > originalCount - 1)
@@ -49,7 +48,7 @@ public class InsertableComponent : Component
             {
                 insertNode.Add(moveEle[i]);
             }
-            if (insertDone != null) insertDone.Invoke();
+            if (InsertDone != null) InsertDone.Invoke();
         }
     }
 

@@ -43,7 +43,7 @@ public class Slider : ValidatorComponent <int>
         checkedBar = UIToolkitUtils.FindChildElement(this, "Checked");
         tips = UIToolkitUtils.FindChildElement(this, "Tips") as Label;
         barContainer = UIToolkitUtils.FindChildElement(this, "BarContainer");
-        backdrop = UIToolkitUtils.CreateBackDrop(this);
+        backdrop = UIToolkitUtils.FindChildElement(this, ".backdrop");
 
         backdrop.RegisterCallback<MouseMoveEvent>(MovePoint);
         barContainer.RegisterCallback<MouseMoveEvent>(MovePoint);

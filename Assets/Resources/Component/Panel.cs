@@ -27,8 +27,6 @@ public class Panel : InsertableComponent
 
     public bool reszieable { get; set; }
 
-    private float width = 0;
-    private float height = 0;
     private float left = 0;
     private float top = 0;
 
@@ -85,15 +83,7 @@ public class Panel : InsertableComponent
         backdrop.style.display = DisplayStyle.None;
         backdrop.RegisterCallback<MouseMoveEvent>(OnBackdropMove);
 
-        RegisterCallback<GeometryChangedEvent>(evt =>
-        {
-            if (worldBound.width > 0 && worldBound.height > 0 && !(width > 0 && height > 0))
-            {
-                Init();
-            }
-        });
-
-
+        OnMounted += () => { Init(); };
     }
 
     private void OnMouseUp(MouseUpEvent evt)
@@ -269,7 +259,6 @@ public class Panel : InsertableComponent
         height = container.worldBound.height;
         left = worldBound.xMin;
         top = worldBound.yMin;
-
 
         topResizeAreaTLP = position;
         topResizeAreaBRP = new Vector2(position.x + width, position.y + resizeAreaSize);

@@ -1,9 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Uss/Common.uss?fileID=7433441132597879392&amp;guid=097bd7136e22d0b49bc0d8955ae46758&amp;type=3#Common" />
+    <ui:VisualElement name="Mask" />
     <ui:VisualElement name="Background" />
     <ui:VisualElement name="Static" />
-    <ui:VisualElement name="Float">
-        <Panel Width="500" Height="700" width="500" height="650" minWidth="500" minHeight="650" initWidth="500" initHeight="650" style="left: 100px; top: 100px;">
+    <ui:VisualElement name="Float" style="top: 4px; left: 1px;">
+        <Panel Width="500" Height="700" width="500" height="650" minWidth="550" minHeight="650" initWidth="500" initHeight="650" style="left: 100px; top: 100px;">
             <Form>
                 <StringFormControl>
                     <TextInputField Validator="Required" />
@@ -28,9 +29,9 @@
                 </BoolFormControl>
             </Form>
         </Panel>
-        <Panel maxWidth="600" maxHeight="600" style="position: absolute; left: 600px; top: 100px;">
+        <Panel maxHeight="800" minWidth="600" minHeight="600" initHeight="600" style="position: absolute; left: 700px; top: 100px;">
+            <Table headerFixed="true" initHeight="500" />
             <Table />
         </Panel>
     </ui:VisualElement>
-    <ui:VisualElement name="Mask" />
 </ui:UXML>
