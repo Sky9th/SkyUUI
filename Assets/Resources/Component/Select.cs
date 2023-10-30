@@ -215,6 +215,7 @@ public class Select : ValidatorComponent<string>
         {
             using ChangeEvent<string> changeEvent = ChangeEvent<string>.GetPooled(value, valueStr);
             changeEvent.target = this;
+            changeEvent.PreventDefault();
             SendEvent(changeEvent);
         }
         value = valueStr;

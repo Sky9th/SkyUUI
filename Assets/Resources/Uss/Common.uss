@@ -1,4 +1,6 @@
 :root {
+    --label-normal-color: rgb(42, 56, 79);
+    --default-bg-color: rgba(247, 244, 248, 0.91);
     --txt-solid-color: rgb(255, 255, 255);
     --txt-color: rgb(42, 56, 79);
     --placeholder-color: rgb(153, 153, 153);
@@ -21,12 +23,10 @@
     --danger-dark-color: rgb(197, 14, 14);
     --danger-light-color: rgb(249, 155, 155);
     --scroller-bg-color: var(--default-dark-color);
-    --panel-bg-color: rgba(247, 244, 248, 0.91);
-    --panel-content-color: rgb(243, 240, 241);
+    --panel-bg-color: var(--default-bg-color);
     --panel-bd-color: var(--default-light-color);
     --table-bd-color: var(--default-light-color);
     --divider-color: var(--default-light-color);
-    --label-normal-color: rgb(42, 56, 79);
     --btn-txt-solid-color: var(--txt-solid-color);
     --btn-default-color: var(--default-color);
     --btn-primary-color: var(--primary-color);
@@ -64,6 +64,19 @@
     --progressBar-danger-color: var(--danger-dark-color);
     --pagiantion-default-current-bg-color: var(--default-color);
     --pagiantion-default-current-txt-color: var(--txt-solid-color);
+    --message-bg-color: var(--default-bg-color);
+    --message-default-bd-color: var(--default-light-color);
+    --message-default-txt-color: var(--txt-color);
+    --message-primary-bd-color: var(--primary-light-color);
+    --message-primary-txt-color: var(--primary-color);
+    --message-info-bd-color: var(--info-light-color);
+    --message-info-txt-color: var(--info-color);
+    --message-warn-bd-color: var(--warn-light-color);
+    --message-warn-txt-color: var(--warn-color);
+    --message-danger-bd-color: var(--danger-light-color);
+    --message-danger-txt-color: var(--danger-color);
+    --message-disaled-bd-color: var(--disaled-light-color);
+    --message-disaled-txt-color: var(--disaled-color);
 }
 
 #container {

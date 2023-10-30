@@ -49,5 +49,7 @@
             </ui:Foldout>
         </Panel>
         <Modal Width="500" Height="250" style="position: absolute; left: 100px; top: 800px;" />
+        <Message style="position: absolute; right: 30px; top: 30px;" />
+        <Message style="position: absolute; top: 180px; right: 30px;" />
     </ui:VisualElement>
 </ui:UXML>

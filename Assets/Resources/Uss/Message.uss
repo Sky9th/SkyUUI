@@ -1,0 +1,116 @@
+#Message {
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    background-color: var(--message-bg-color);
+    border-width: 1px;
+    border-color: var(--message-default-bd-color);
+    width: 360px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#Message #MessageTitle {
+    padding-right: 25px;
+    flex-direction: row;
+}
+
+#Message #MessageTitle > #Icon {
+    width: 25px;
+    height: 30px;
+    padding-top: 5px;
+    padding-right: 0;
+    padding-bottom: 5px;
+    padding-left: 0;
+    margin-top: 1px;
+}
+
+#Message #MessageTitle > #Icon > #Img {
+    background-image: url('project://database/Assets/Images/Icons/default/info-circle%206.png?fileID=2800000&guid=cc0ab60b660f64c4ba9cc005eed2692a&type=3#info-circle 6');
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-slice-left: 0;
+    -unity-slice-right: 0;
+}
+
+#Message #MessageTitle Label {
+    -unity-font-style: bold;
+}
+
+#Message #MessageContent {
+    padding-right: 25px;
+}
+
+#Message #MessageContent Label {
+    white-space: normal;
+}
+
+#Message #MessageClose > #Img {
+    white-space: normal;
+    background-image: url('project://database/Assets/Images/Icons/default/close-circle-fill%20288.png?fileID=2800000&guid=b3ed5c721498de4448a2a9b4bf8e5dc8&type=3#close-circle-fill 288');
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+#Message.primary {
+    border-color: var(--message-primary-bd-color);
+}
+
+#Message.primary #MessageTitle #Icon #Img {
+    background-image: url('project://database/Assets/Images/Icons/primary/info-circle%206.png?fileID=2800000&guid=703147d245c06e44db9f1d466949762b&type=3#info-circle 6');
+}
+
+#Message.primary #MessageClose > #Img {
+    background-image: url('project://database/Assets/Images/Icons/primary/close-circle-fill%20288.png?fileID=2800000&guid=31ccdd74332c27d4caa9ad3295bebdf9&type=3#close-circle-fill 288');
+}
+
+#Message.info {
+    border-color: var(--message-info-bd-color);
+}
+
+#Message.info #MessageTitle #Icon #Img {
+    background-image: url('project://database/Assets/Images/Icons/info/info-circle%206.png?fileID=2800000&guid=9e48281c1378f3645bb3eef66c506244&type=3#info-circle 6');
+}
+
+#Message.info #MessageClose > #Img {
+    background-image: url('project://database/Assets/Images/Icons/info/close-circle-fill%20288.png?fileID=2800000&guid=5b544934c456abf42b54310c288a6ec6&type=3#close-circle-fill 288');
+}
+
+#Message.warn {
+    border-color: var(--message-warn-bd-color);
+}
+
+#Message.warn #MessageTitle #Icon #Img {
+    background-image: url('project://database/Assets/Images/Icons/warn/warning-circle%2025.png?fileID=2800000&guid=9bda83da3aca39048a773ce888c6b30c&type=3#warning-circle 25');
+}
+
+#Message.warn #MessageClose > #Img {
+    background-image: url('project://database/Assets/Images/Icons/warn/close-circle-fill%20288.png?fileID=2800000&guid=cdec3554059afa34985badf9dc9475ea&type=3#close-circle-fill 288');
+}
+
+#Message.danger {
+    border-color: var(--message-danger-bd-color);
+}
+
+#Message.danger #MessageTitle #Icon #Img {
+    background-image: url('project://database/Assets/Images/Icons/warn/error%20187.png?fileID=2800000&guid=05e90932c9f7f8a41b47213ae7e63c93&type=3#error 187');
+}
+
+#Message.danger #MessageClose > #Img {
+    background-image: url('project://database/Assets/Images/Icons/default/close-circle-fill%20288.png?fileID=2800000&guid=b3ed5c721498de4448a2a9b4bf8e5dc8&type=3#close-circle-fill 288');
+}
+
+#Message.disabled {
+    border-color: var(--message-disabled-bd-color);
+}
+
+#Message.disabled #MessageTitle #Icon #Img {
+    background-image: url('project://database/Assets/Images/Icons/disabled/info-circle%206.png?fileID=2800000&guid=bea4fc1841f7e544fa5813415d448a6c&type=3#info-circle 6');
+}
+
+#Message.disabled #MessageClose > #Img {
+    background-image: url('project://database/Assets/Images/Icons/disabled/close-circle-fill%20288.png?fileID=2800000&guid=d41b31b63a1da204e9a4fa6fc50bc8c0&type=3#close-circle-fill 288');
+}

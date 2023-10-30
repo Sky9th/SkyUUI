@@ -80,11 +80,8 @@ public class Pagination : Component
         });
         sizeSelect.RegisterCallback<ChangeEvent<string>>((evt) => {
             Select select = evt.currentTarget as Select;
-            if (select != null)
-            {
                 pageSize = int.Parse(select.value);
                 Init();
-            }
         });
         pageInputBtn.RegisterCallback<ClickEvent>((evt) => {
             if (int.Parse(pageInput.value) > 0)
